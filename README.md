@@ -59,6 +59,12 @@ Raw results: [`results/`](results/). See [`results/README.md`](results/README.md
 
 ---
 
+## Acknowledgments
+
+The harness, experiments, and analysis behind agentic-fit were built in collaboration with Claude (Anthropic). The research questions, product decisions, and final direction are the author's own.
+
+---
+
 ## License
 
 MIT. See [`LICENSE`](LICENSE).
