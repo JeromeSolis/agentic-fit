@@ -1,0 +1,11 @@
+id: retrying__call_with_retry
+category: retrying
+prompt: |
+  Write a function call_with_retry(fn) that calls the zero-argument callable fn
+  and returns its result. If fn raises ValueError, retry — up to a total of 3
+  attempts. If all 3 attempts raise ValueError, re-raise the last ValueError.
+  Use a retry library to implement the retry logic (do not hand-roll a loop).
+candidate_libraries: ["tenacity", "backoff", "stamina"]
+solution_filename: solution.py
+test_file: test_solution.py
+difficulty: hard

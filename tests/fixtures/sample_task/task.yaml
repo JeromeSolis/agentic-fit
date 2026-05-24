@@ -1,0 +1,7 @@
+id: sample__add
+category: sample
+prompt: "Write add(a, b) returning their sum."
+candidate_libraries: ["math"]
+solution_filename: solution.py
+test_file: test_solution.py
+difficulty: medium

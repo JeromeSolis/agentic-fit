@@ -1,0 +1,52 @@
+[project]
+name = "agentic-fit"
+version = "0.1.0"
+description = "Eval harness measuring how well coding agents use Python libraries"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Jerome Solis", email = "j@51705.ai" }]
+keywords = ["llm", "coding-agents", "benchmark", "evaluation", "python"]
+dependencies = ["anthropic>=0.40", "pyyaml>=6.0", "python-dotenv>=1.0"]
+
+[project.scripts]
+agentic-fit = "agentic_fit.cli:main"
+
+[project.urls]
+Repository = "https://github.com/JeromeSolis/agentic-fit"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+# Libraries the agent is asked to bake off. Not imported by the harness itself —
+# installed so the sandbox subprocess can import them. Keep in sync with tasks/*.
+candidates = [
+    "requests",
+    "httpx",
+    "urllib3",
+    "pydantic",
+    "marshmallow",
+    "python-dateutil",
+    "arrow",
+    "jinja2",
+    "mako",
+    "chevron",
+    "click",
+    "typer",
+    "tenacity",
+    "backoff",
+    "stamina",
+    "pyyaml",
+    "ruamel.yaml",
+    "omegaconf",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["fixtures"]
+markers = ["slow: tests requiring network or real external tools (uv, pypistats, etc.)"]
+
+[tool.setuptools]
+packages = ["agentic_fit"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,23 @@
+{
+  "snapshot_date": "2026-05-24",
+  "downloads": {
+    "arrow": 76856461,
+    "backoff": 139442392,
+    "chevron": 11335339,
+    "click": 974634517,
+    "dateutil": 1088858998,
+    "httpx": 714603103,
+    "jinja2": 591320972,
+    "mako": 167558958,
+    "marshmallow": 135138724,
+    "omegaconf": 36716182,
+    "pydantic": 1040911364,
+    "requests": 1547251001,
+    "ruamel": 176573839,
+    "stamina": 3493530,
+    "tenacity": 408792689,
+    "typer": 438629225,
+    "urllib3": 1634903234,
+    "yaml": 1049288473
+  }
+}

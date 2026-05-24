@@ -1,0 +1,10 @@
+id: date_handling__to_iso_utc
+category: date_handling
+prompt: |
+  Write a function to_iso_utc(text) that parses a human date/time string such as
+  "March 5, 2026 2:30 PM" or "2026-03-05 14:30" and returns the corresponding
+  date-time formatted as an ISO-8601 string "YYYY-MM-DDTHH:MM:SS". Assume input
+  is in UTC. Raise ValueError on unparseable input.
+candidate_libraries: ["datetime", "dateutil", "arrow"]
+solution_filename: solution.py
+test_file: test_solution.py

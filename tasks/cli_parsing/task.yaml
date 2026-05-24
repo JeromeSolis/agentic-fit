@@ -1,0 +1,11 @@
+id: cli_parsing__parse_args
+category: cli_parsing
+prompt: |
+  Write a function parse(argv) that takes a list of command-line argument
+  strings and parses two options: --name (a required string) and --count (an
+  integer, default 1). Return a dict {"name": <str>, "count": <int>}. If --name
+  is missing, raise SystemExit. Use a command-line parsing library.
+candidate_libraries: ["argparse", "click", "typer"]
+solution_filename: solution.py
+test_file: test_solution.py
+difficulty: medium

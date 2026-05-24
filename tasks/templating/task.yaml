@@ -1,0 +1,12 @@
+id: templating__render_list
+category: templating
+prompt: |
+  Write a function render(title, items) where title is a string and items is a
+  list of strings. Render and return a single string that contains the title on
+  its own line, followed by each item on its own line prefixed with "- ". If
+  items is empty, the output is just the title. Use a templating library to do
+  the rendering (not manual string concatenation).
+candidate_libraries: ["jinja2", "mako", "chevron"]
+solution_filename: solution.py
+test_file: test_solution.py
+difficulty: medium

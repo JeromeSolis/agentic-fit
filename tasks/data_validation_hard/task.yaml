@@ -1,0 +1,15 @@
+id: data_validation__parse_order_hard
+category: data_validation
+prompt: |
+  Write a function parse_order(data) that validates and normalizes a nested
+  order dict of the shape:
+    {"customer": {"name": str, "email": str},
+     "items": [{"sku": str, "qty": int}, ...]}
+  Requirements: coerce each item's qty from a numeric string to an int; raise
+  ValueError if any qty is less than 1; raise ValueError if customer.email does
+  not contain "@". On success return the normalized order as a dict (same shape,
+  qty as int). Use a data-validation library.
+candidate_libraries: ["pydantic", "marshmallow", "dataclasses"]
+solution_filename: solution.py
+test_file: test_solution.py
+difficulty: hard

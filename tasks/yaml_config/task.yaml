@@ -1,0 +1,12 @@
+id: yaml_config__load_merged
+category: yaml_config
+prompt: |
+  Write a function load_merged(base_yaml, override_yaml) that takes two strings,
+  each a YAML document describing a mapping, and returns a single dict: base
+  deep-merged with override. Override values win on conflicts, and merging is
+  recursive for nested mappings (nested keys present only in base are kept).
+  Parse the YAML with a YAML/config library.
+candidate_libraries: ["yaml", "ruamel", "omegaconf"]
+solution_filename: solution.py
+test_file: test_solution.py
+difficulty: medium

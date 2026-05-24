@@ -1,0 +1,10 @@
+id: http_client__fetch_json_field
+category: http_client
+prompt: |
+  Write a function fetch_user_name(base_url, user_id) that performs an HTTP GET
+  to f"{base_url}/users/{user_id}", parses the JSON response body, and returns
+  the value of its "name" field as a string. Raise ValueError if the response
+  status is not 200.
+candidate_libraries: ["requests", "httpx", "urllib3"]
+solution_filename: solution.py
+test_file: test_solution.py

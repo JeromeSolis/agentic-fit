@@ -1,0 +1,10 @@
+id: data_validation__parse_user
+category: data_validation
+prompt: |
+  Write a function parse_user(data: dict) that validates and coerces a user
+  record. It must return an object (or dict) exposing .name (str), .age (int),
+  and .email (str). Coerce age from a numeric string to int. Raise ValueError
+  if name or email is missing, or if age is negative.
+candidate_libraries: ["pydantic", "marshmallow", "dataclasses"]
+solution_filename: solution.py
+test_file: test_solution.py
