@@ -2753,5 +2753,70 @@
       "cost_usd": 0.0017599400000000002,
       "n": 3
     }
-  ]
+  ],
+  "tasks": {
+    "cli_parsing": {
+      "summary": "Parse two command-line options: a required --name and an integer --count with a default.",
+      "prompt": "Write a function parse(argv) that takes a list of command-line argument\nstrings and parses two options: --name (a required string) and --count (an\ninteger, default 1). Return a dict {\"name\": <str>, \"count\": <int>}. If --name\nis missing, raise SystemExit. Use a command-line parsing library.",
+      "candidate_libraries": [
+        "argparse",
+        "click",
+        "typer"
+      ]
+    },
+    "data_validation": {
+      "summary": "Validate and coerce a user record, converting a numeric age and raising on missing or invalid fields.",
+      "prompt": "Write a function parse_user(data: dict) that validates and coerces a user\nrecord. It must return an object (or dict) exposing .name (str), .age (int),\nand .email (str). Coerce age from a numeric string to int. Raise ValueError\nif name or email is missing, or if age is negative.",
+      "candidate_libraries": [
+        "pydantic",
+        "marshmallow",
+        "dataclasses"
+      ]
+    },
+    "date_handling": {
+      "summary": "Parse a human date/time string and return it as an ISO-8601 UTC string, raising on bad input.",
+      "prompt": "Write a function to_iso_utc(text) that parses a human date/time string such as\n\"March 5, 2026 2:30 PM\" or \"2026-03-05 14:30\" and returns the corresponding\ndate-time formatted as an ISO-8601 string \"YYYY-MM-DDTHH:MM:SS\". Assume input\nis in UTC. Raise ValueError on unparseable input.",
+      "candidate_libraries": [
+        "datetime",
+        "dateutil",
+        "arrow"
+      ]
+    },
+    "http_client": {
+      "summary": "Perform an HTTP GET, parse the JSON body, return its name field, and raise on a non-200 status.",
+      "prompt": "Write a function fetch_user_name(base_url, user_id) that performs an HTTP GET\nto f\"{base_url}/users/{user_id}\", parses the JSON response body, and returns\nthe value of its \"name\" field as a string. Raise ValueError if the response\nstatus is not 200.",
+      "candidate_libraries": [
+        "requests",
+        "httpx",
+        "urllib3"
+      ]
+    },
+    "retrying": {
+      "summary": "Call a function with up to three retry attempts on failure, re-raising once they are exhausted.",
+      "prompt": "Write a function call_with_retry(fn) that calls the zero-argument callable fn\nand returns its result. If fn raises ValueError, retry \u2014 up to a total of 3\nattempts. If all 3 attempts raise ValueError, re-raise the last ValueError.\nUse a retry library to implement the retry logic (do not hand-roll a loop).",
+      "candidate_libraries": [
+        "tenacity",
+        "backoff",
+        "stamina"
+      ]
+    },
+    "templating": {
+      "summary": "Render a title and a list of items to a formatted string using a templating library.",
+      "prompt": "Write a function render(title, items) where title is a string and items is a\nlist of strings. Render and return a single string that contains the title on\nits own line, followed by each item on its own line prefixed with \"- \". If\nitems is empty, the output is just the title. Use a templating library to do\nthe rendering (not manual string concatenation).",
+      "candidate_libraries": [
+        "jinja2",
+        "mako",
+        "chevron"
+      ]
+    },
+    "yaml_config": {
+      "summary": "Parse two YAML documents and deep-merge them recursively, with override values winning conflicts.",
+      "prompt": "Write a function load_merged(base_yaml, override_yaml) that takes two strings,\neach a YAML document describing a mapping, and returns a single dict: base\ndeep-merged with override. Override values win on conflicts, and merging is\nrecursive for nested mappings (nested keys present only in base are kept).\nParse the YAML with a YAML/config library.",
+      "candidate_libraries": [
+        "yaml",
+        "ruamel",
+        "omegaconf"
+      ]
+    }
+  }
 }

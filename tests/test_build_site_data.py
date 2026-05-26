@@ -61,10 +61,31 @@ def test_build_writes_envelope_with_snapshot(tmp_path):
         + json.dumps(_row("m1", "data_validation", "pydantic", 1, True, 0.004)) + "\n"
     )
     out = tmp_path / "site" / "data.json"
-    data = bsd.build(src, out)
+    data = bsd.build(src, out, tasks_dir=tmp_path / "no_tasks")
     assert out.exists()
     on_disk = json.loads(out.read_text())
     assert on_disk["snapshot"] == "2026-05-25"
     assert set(on_disk) == {"snapshot", "models", "categories",
-                            "libraries_by_category", "cells"}
+                            "libraries_by_category", "cells", "tasks"}
     assert data["snapshot"] == "2026-05-25"
+    # task meta carries an entry per category; summary comes from the editorial
+    # dict even when the task.yaml dir is absent (prompt then empty).
+    assert on_disk["tasks"]["data_validation"]["summary"]
+    assert on_disk["tasks"]["data_validation"]["prompt"] == ""
+
+
+def test_build_embeds_task_prompt_from_yaml(tmp_path):
+    bsd = _load()
+    src = tmp_path / "crosslab_reps3_2026-05-25.jsonl"
+    src.write_text(json.dumps(_row("m1", "cli_parsing", "argparse", 0, True, 0.004)) + "\n")
+    tasks = tmp_path / "tasks" / "cli_parsing"
+    tasks.mkdir(parents=True)
+    (tasks / "task.yaml").write_text(
+        "id: cli_parsing__parse_args\ncategory: cli_parsing\n"
+        "prompt: |\n  Write a function parse(argv).\n"
+        'candidate_libraries: ["argparse", "click", "typer"]\n'
+    )
+    data = bsd.build(src, src.parent / "site" / "data.json", tasks_dir=tmp_path / "tasks")
+    t = data["tasks"]["cli_parsing"]
+    assert t["prompt"] == "Write a function parse(argv)."
+    assert t["candidate_libraries"] == ["argparse", "click", "typer"]
