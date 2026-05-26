@@ -55,6 +55,20 @@ Snapshot: **May 2026** | 16 models across nine vendors
 | Popularity does not predict it | 54% concordance with PyPI download rank, barely above chance |
 | The per-model signal is actionable | one universal default costs ~1.25× more, and fails where a per-model pick works |
 
+### Best library by category
+
+Each count is how many of the 16 models reached their most reliable, lowest-cost solution with that library. Only command-line parsing is unanimous; everywhere else the models disagree.
+
+| Category | Best library, by model |
+|---|---|
+| `cli_parsing` | argparse (16) |
+| `data_validation` | pydantic (9) · dataclasses (4) · marshmallow (3) |
+| `date_handling` | dateutil (9) · datetime (6) · arrow (1) |
+| `http_client` | requests (10) · httpx (5) · urllib3 (1) |
+| `retrying` | tenacity (8) · backoff (6) · stamina (2) |
+| `templating` | jinja2 (7) · mako (5) · chevron (4) |
+| `yaml_config` | omegaconf (11) · PyYAML (5) |
+
 Full methodology, per-category numbers, and caveats: [`docs/FINDINGS.md`](docs/FINDINGS.md)
 
 Raw results: [`results/`](results/). See [`results/README.md`](results/README.md) for the schema.
