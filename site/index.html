@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>agentic-fit — which Python library does your model use best?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>The best Python library is model-specific.</h1>
+    <p class="lede" id="hero-lede">A benchmark of which library a coding agent uses most reliably, at the lowest cost — measured across 16 models, not assumed.</p>
+    <p class="repo-link"><a href="https://github.com/JeromeSolis/agentic-fit">View the benchmark on GitHub →</a></p>
+  </header>
+
+  <main>
+    <section class="explorer">
+      <h2>Explore the results</h2>
+      <div class="controls">
+        <label class="ctrl">Category
+          <select id="category-select"></select>
+        </label>
+        <div class="ctrl metric-toggle" id="metric-toggle" role="group" aria-label="Metric">
+          <button data-metric="cost" class="on">cost ($/task)</button>
+          <button data-metric="success">success rate</button>
+        </div>
+        <details class="ctrl model-filter">
+          <summary>Models</summary>
+          <div id="model-checkboxes"></div>
+        </details>
+      </div>
+      <div class="heatmap-wrap"><div id="heatmap"></div></div>
+      <div class="legend" id="legend"></div>
+      <table class="drilldown" id="drilldown">
+        <thead>
+          <tr>
+            <th>Model</th><th>Library</th>
+            <th class="sortable" data-sort="success_rate">Success</th>
+            <th class="sortable" data-sort="cost_usd">$/task</th>
+            <th>n</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="findings">
+      <h2>What the benchmark found</h2>
+      <ol id="findings-list"></ol>
+      <p><a href="https://github.com/JeromeSolis/agentic-fit/blob/main/docs/FINDINGS.md">Full methodology and caveats →</a></p>
+    </section>
+
+    <section class="motivation">
+      <h2>Why this exists</h2>
+      <p id="motivation-text"></p>
+      <p><a href="https://github.com/JeromeSolis/agentic-fit#motivation">Read the full motivation →</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p id="footer-meta"></p>
+    <p>MIT licensed · <a href="https://github.com/JeromeSolis/agentic-fit">agentic-fit</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
