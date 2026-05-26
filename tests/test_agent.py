@@ -189,3 +189,24 @@ def test_run_agent_free_non_curated_stdlib_not_recorded_as_choice():
                   rep=0, mode="free_unconstrained", backend=backend)
     assert jobs[-1].install_libraries == []
     assert r.chosen_library is None
+
+
+def test_run_agent_records_error_when_client_raises():
+    class _BoomClient:
+        def complete(self, system, messages):
+            raise RuntimeError("api exploded")
+    r = run_agent(_BoomClient(), TASK, "math", "fake", rep=0, max_iters=3,
+                  backend=_CapturingBackend())
+    assert r.success is False
+    assert r.status == "error"
+    assert "api exploded" in (r.error or "")
+
+
+def test_run_agent_records_provider_and_cost():
+    from agentic_fit.budget import run_cost
+    backend = _CapturingBackend()
+    client = FakeLLMClient([LLMResponse(GOOD, 100, 40)])
+    r = run_agent(client, TASK, "math", "claude-sonnet-4-6", rep=0,
+                  backend=backend, provider="anthropic")
+    assert r.provider == "anthropic"
+    assert r.cost_usd == run_cost("claude-sonnet-4-6", 100, 40)

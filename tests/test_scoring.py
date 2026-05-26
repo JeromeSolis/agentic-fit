@@ -95,3 +95,24 @@ def test_category_variance_summary_success_spread():
     assert summary["http"]["success_spread_pp"] == 100.0
     assert summary["http"]["best"][0] == "requests"
     assert summary["http"]["worst"][0] == "urllib3"
+
+
+def test_crosslab_best_ranks_by_success_then_cost():
+    from agentic_fit.scoring import score_crosslab, crosslab_best
+    from agentic_fit.models import RunResult
+
+    def mk(model, lib, success, cost):
+        return RunResult("c__t", lib, 0, model, success, 1, 1, 1, 10, 5,
+                         category="c", status="passed", cost_usd=cost, provider="openrouter")
+
+    results = [
+        mk("M", "cheap", True, 0.001), mk("M", "cheap", True, 0.001),
+        mk("M", "pricey", True, 0.010), mk("M", "pricey", True, 0.010),
+        mk("M", "flaky", False, 0.0005), mk("M", "flaky", True, 0.0005),
+    ]
+    scores = score_crosslab(results)
+    assert {(s.model, s.category, s.library) for s in scores} == {
+        ("M", "c", "cheap"), ("M", "c", "pricey"), ("M", "c", "flaky")}
+    best = crosslab_best(scores)
+    # Among 100%-success libs, the cheaper one wins; flaky (50%) loses on success.
+    assert best[("M", "c")].library == "cheap"

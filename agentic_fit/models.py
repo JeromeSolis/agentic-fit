@@ -32,6 +32,8 @@ class RunResult:
     version: str | None = None
     chosen_library: str | None = None  # reserved for the C3 free-choice arm; unset for now
     status: str = ""  # final SandboxResult.status: passed/failed/collection_error/timeout/import_not_used/...
+    cost_usd: float | None = None  # tokens * unified OpenRouter list price (budget.run_cost)
+    provider: str = ""             # "anthropic" | "openrouter"
 
     @property
     def total_tokens(self) -> int:

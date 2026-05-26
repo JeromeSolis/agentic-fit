@@ -12,6 +12,17 @@ from .sandbox import SandboxResult, run_solution
 from .venvs import resolve_job_env
 
 
+def docker_available() -> bool:
+    """True if the Docker daemon is reachable. Used as a preflight before a docker run."""
+    import subprocess
+
+    try:
+        result = subprocess.run(["docker", "info"], capture_output=True, timeout=15)
+        return result.returncode == 0
+    except (FileNotFoundError, subprocess.TimeoutExpired, OSError):
+        return False
+
+
 @dataclass
 class SandboxJob:
     solution_code: str
