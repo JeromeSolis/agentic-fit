@@ -36,3 +36,18 @@ plus the PyPI download snapshot in `data/pypi_downloads.json`.
 | `category` | task category |
 | `version` | resolved library version (or `py3.12` for stdlib) |
 | `chosen_library` | in free-choice arms, what the agent actually imported |
+
+## Cross-lab dataset (May 2026)
+
+`crosslab_reps3_2026-05-25.jsonl` — the 8 task categories run across 16 models
+from nine vendors, reps=3, every model routed through OpenRouter so the
+measurement is identical. A snapshot of specific model versions; re-pin and
+re-run with `scripts/fetch_openrouter_models.py` as models ship.
+
+Additional row fields beyond the C1/C3 schema:
+
+| Field | Meaning |
+|---|---|
+| `cost_usd` | tokens times the model's OpenRouter list price (the cross-lab cost metric) |
+| `provider` | routing provider for the row (`openrouter`) |
+| `status` | run outcome (`passed`, `failed`, `import_not_used`, `disallowed_import`, `collection_error`, `error`) |
