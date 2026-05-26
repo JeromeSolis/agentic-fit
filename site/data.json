@@ -1,0 +1,2757 @@
+{
+  "snapshot": "2026-05-25",
+  "models": [
+    "anthropic/claude-haiku-4.5",
+    "anthropic/claude-opus-4.7",
+    "anthropic/claude-sonnet-4.6",
+    "cohere/command-a",
+    "deepseek/deepseek-v3.2",
+    "deepseek/deepseek-v4-pro",
+    "google/gemini-3.1-pro-preview",
+    "google/gemini-3.5-flash",
+    "mistralai/codestral-2508",
+    "mistralai/mistral-large-2512",
+    "moonshotai/kimi-k2.6",
+    "openai/gpt-5.4-mini",
+    "openai/gpt-5.5",
+    "qwen/qwen3-coder-plus",
+    "qwen/qwen3.7-max",
+    "z-ai/glm-5.1"
+  ],
+  "categories": [
+    "cli_parsing",
+    "data_validation",
+    "date_handling",
+    "http_client",
+    "retrying",
+    "templating",
+    "yaml_config"
+  ],
+  "libraries_by_category": {
+    "cli_parsing": [
+      "argparse",
+      "click",
+      "typer"
+    ],
+    "data_validation": [
+      "dataclasses",
+      "marshmallow",
+      "pydantic"
+    ],
+    "date_handling": [
+      "arrow",
+      "datetime",
+      "dateutil"
+    ],
+    "http_client": [
+      "httpx",
+      "requests",
+      "urllib3"
+    ],
+    "retrying": [
+      "backoff",
+      "stamina",
+      "tenacity"
+    ],
+    "templating": [
+      "chevron",
+      "jinja2",
+      "mako"
+    ],
+    "yaml_config": [
+      "omegaconf",
+      "ruamel",
+      "yaml"
+    ]
+  },
+  "cells": [
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.003027,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.0038400000000000005,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.001914,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.0027375,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.00013923,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.00061161,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.012236,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.012489,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.0001803,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.00036950000000000004,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.00244041,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.00043725000000000003,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.005735,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.0004225,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.0025025000000000004,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "cli_parsing",
+      "library": "argparse",
+      "success_rate": 1.0,
+      "cost_usd": 0.00064274,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.0034760000000000004,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.007905,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.0026309999999999997,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 0.0,
+      "cost_usd": 0.043025,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.00031361400000000004,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.0006216150000000001,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.098892,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.06521400000000001,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 0.3333333333333333,
+      "cost_usd": 0.0011151,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.0012945,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 0.0,
+      "cost_usd": 0.04328808000000001,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.0014489999999999998,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.01953,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.0018810999999999997,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.01828,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "cli_parsing",
+      "library": "click",
+      "success_rate": 1.0,
+      "cost_usd": 0.0071128400000000005,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.01097,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 1.0,
+      "cost_usd": 0.00706,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 1.0,
+      "cost_usd": 0.018213,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 0.3333333333333333,
+      "cost_usd": 0.0217025,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 1.0,
+      "cost_usd": 0.000243936,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.005217825,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.149066,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 0.0,
+      "cost_usd": 0.112023,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 0.0,
+      "cost_usd": 0.0015087,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 0.3333333333333333,
+      "cost_usd": 0.0032275,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 0.3333333333333333,
+      "cost_usd": 0.04329173000000001,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.00119325,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 1.0,
+      "cost_usd": 0.067115,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.0078143,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 1.0,
+      "cost_usd": 0.011645,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "cli_parsing",
+      "library": "typer",
+      "success_rate": 0.0,
+      "cost_usd": 0.03836742,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.002826,
+      "n": 6
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.0151425,
+      "n": 6
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.0065985,
+      "n": 6
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.0038525,
+      "n": 6
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.000364896,
+      "n": 6
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.00135459,
+      "n": 6
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.042073,
+      "n": 6
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.06683775,
+      "n": 6
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.0006082500000000001,
+      "n": 6
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.00056675,
+      "n": 6
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 0.8333333333333334,
+      "cost_usd": 0.027660165,
+      "n": 6
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.002103,
+      "n": 6
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.030115000000000003,
+      "n": 6
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.001271075,
+      "n": 6
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.00998625,
+      "n": 6
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "data_validation",
+      "library": "dataclasses",
+      "success_rate": 1.0,
+      "cost_usd": 0.0033954200000000006,
+      "n": 6
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.0027235,
+      "n": 6
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.0120675,
+      "n": 6
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.014976,
+      "n": 6
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.003475,
+      "n": 6
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.000798525,
+      "n": 6
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.001564695,
+      "n": 6
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 0.8333333333333334,
+      "cost_usd": 0.09268799999999999,
+      "n": 6
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.05214,
+      "n": 6
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.0007734,
+      "n": 6
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.00212,
+      "n": 6
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.028766735,
+      "n": 6
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.0028245,
+      "n": 6
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.029735,
+      "n": 6
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.00141895,
+      "n": 6
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.0160275,
+      "n": 6
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "data_validation",
+      "library": "marshmallow",
+      "success_rate": 1.0,
+      "cost_usd": 0.01043756,
+      "n": 6
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.0025310000000000003,
+      "n": 6
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.0124125,
+      "n": 6
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.0055709999999999996,
+      "n": 6
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.009562500000000002,
+      "n": 6
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 0.8333333333333334,
+      "cost_usd": 0.000392301,
+      "n": 6
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.00122496,
+      "n": 6
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 0.8333333333333334,
+      "cost_usd": 0.062098999999999994,
+      "n": 6
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.061082250000000005,
+      "n": 6
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.0021414,
+      "n": 6
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.0010885,
+      "n": 6
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.020731609999999998,
+      "n": 6
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.00167175,
+      "n": 6
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.024255,
+      "n": 6
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.000966225,
+      "n": 6
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.00973375,
+      "n": 6
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "data_validation",
+      "library": "pydantic",
+      "success_rate": 1.0,
+      "cost_usd": 0.00299544,
+      "n": 6
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 0.0,
+      "cost_usd": 0.013583999999999999,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 1.0,
+      "cost_usd": 0.039444999999999994,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 1.0,
+      "cost_usd": 0.013599,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 1.0,
+      "cost_usd": 0.010995,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 0.3333333333333333,
+      "cost_usd": 0.001188054,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 1.0,
+      "cost_usd": 0.0036700950000000004,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 1.0,
+      "cost_usd": 0.141716,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 0.0,
+      "cost_usd": 0.1121265,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 1.0,
+      "cost_usd": 0.0003618,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 1.0,
+      "cost_usd": 0.0017785000000000001,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 0.3333333333333333,
+      "cost_usd": 0.04331655000000001,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 1.0,
+      "cost_usd": 0.00473175,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 1.0,
+      "cost_usd": 0.17580500000000002,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 1.0,
+      "cost_usd": 0.00220415,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 1.0,
+      "cost_usd": 0.0250125,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "date_handling",
+      "library": "arrow",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.005769679999999999,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.003907,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.02243,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.018383999999999998,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.0029725000000000003,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.000620424,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.0023990250000000004,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 0.0,
+      "cost_usd": 0.15193,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 0.0,
+      "cost_usd": 0.114018,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.0004986,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.0013575,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.04329677,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.0020985,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.17652,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.0023543,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.0142725,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "date_handling",
+      "library": "datetime",
+      "success_rate": 1.0,
+      "cost_usd": 0.01164394,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.0064069999999999995,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.00436,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.004557,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.003395,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 0.3333333333333333,
+      "cost_usd": 0.0017477460000000001,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 0.3333333333333333,
+      "cost_usd": 0.0031724550000000002,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.016466,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.06617550000000001,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.0003351,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.0017345000000000001,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.020194890000000004,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.003156,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.0722,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.00231205,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.0093625,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "date_handling",
+      "library": "dateutil",
+      "success_rate": 1.0,
+      "cost_usd": 0.008477,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.0012129999999999999,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.0040750000000000005,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.003297,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.0036225,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.000186858,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.00037236,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.0107,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.00987,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.0001851,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.0004945,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.0035212599999999996,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.000717,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.00889,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.000338,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.00307,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "http_client",
+      "library": "httpx",
+      "success_rate": 1.0,
+      "cost_usd": 0.00094822,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.001132,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.003745,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.001974,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.0030399999999999997,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.00013935599999999999,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.000442395,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.010193999999999998,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.0102375,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.000186,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.00036999999999999994,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.00345073,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.00072525,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.005975,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.0006168500000000001,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.002955,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "http_client",
+      "library": "requests",
+      "success_rate": 1.0,
+      "cost_usd": 0.00088256,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.001338,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.004855,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.003597,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.003935,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.000188244,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.00046240500000000004,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.013498,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.015406499999999998,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.0002016,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.0005775,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.005192970000000001,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.0009105,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.015519999999999997,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.00056615,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.003005,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "http_client",
+      "library": "urllib3",
+      "success_rate": 1.0,
+      "cost_usd": 0.00086604,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.016205999999999998,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.0034100000000000003,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.00174,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.0035825,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.000117306,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.0025282200000000003,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.02247,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.0218835,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.0002862,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.0003795,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.0061545,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.000384,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.01345,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.00026195,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.0073375,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "retrying",
+      "library": "backoff",
+      "success_rate": 1.0,
+      "cost_usd": 0.0033912199999999995,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.001094,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.003535,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.0036300000000000004,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 0.0,
+      "cost_usd": 0.013312500000000001,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.000150192,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.00070818,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.026285999999999997,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.0197235,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.0003645,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.0003045,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.020205920000000002,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.0005549999999999999,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.029109999999999997,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.0003887,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.0080875,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "retrying",
+      "library": "stamina",
+      "success_rate": 1.0,
+      "cost_usd": 0.00191898,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.001094,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.004315,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.00201,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.002285,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 9.840599999999999e-05,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.00018182999999999999,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.021558,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.018121500000000002,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 0.0,
+      "cost_usd": 0.0015396,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.000372,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.012722680000000002,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.000663,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.012580000000000001,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.0011544,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.0067975,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "retrying",
+      "library": "tenacity",
+      "success_rate": 1.0,
+      "cost_usd": 0.00204834,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.0018920000000000002,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.00324,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.0047940000000000005,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 0.3333333333333333,
+      "cost_usd": 0.0135625,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.000128898,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.0012454049999999998,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.025359999999999997,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.029169,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 0.0,
+      "cost_usd": 0.0010701,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.0003625,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.00901646,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.0007575000000000001,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.013269999999999999,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.00032565000000000003,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.050225,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "templating",
+      "library": "chevron",
+      "success_rate": 1.0,
+      "cost_usd": 0.013474439999999999,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.0011380000000000001,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.004045,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.001497,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.0022575,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.00026523000000000003,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.0024333899999999997,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.015016,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.021711,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.0002502,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.00047250000000000005,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.00338782,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.0007897499999999999,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.008924999999999999,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.00040755,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.011962500000000001,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "templating",
+      "library": "jinja2",
+      "success_rate": 1.0,
+      "cost_usd": 0.00067732,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.001042,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 0.3333333333333333,
+      "cost_usd": 0.031799999999999995,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.007164,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.0018949999999999998,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 0.3333333333333333,
+      "cost_usd": 0.00097335,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.001674315,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.049202,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 0.6666666666666666,
+      "cost_usd": 0.106665,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.0002526,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.0002785,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 0.0,
+      "cost_usd": 0.04329684,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.00119025,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.094265,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.00030940000000000004,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.01406,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "templating",
+      "library": "mako",
+      "success_rate": 1.0,
+      "cost_usd": 0.0005531399999999999,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.001442,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.004229999999999999,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.002919,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.002505,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.000411642,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.0007286249999999999,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.017904,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.029817,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.0003318,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.000466,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.00883409,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.00081975,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.024665000000000003,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.0006350500000000001,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.008462500000000001,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "yaml_config",
+      "library": "omegaconf",
+      "success_rate": 1.0,
+      "cost_usd": 0.00161616,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.002241,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.00975,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.003936,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.00348,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.000259182,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.001187985,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.033382,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.091083,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.000414,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.0007695000000000001,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.013610440000000001,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.0012952500000000002,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.027175,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.0008268,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.0087025,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "yaml_config",
+      "library": "ruamel",
+      "success_rate": 1.0,
+      "cost_usd": 0.004018560000000001,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.002209,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.006045,
+      "n": 3
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.004875000000000001,
+      "n": 3
+    },
+    {
+      "model": "cohere/command-a",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.0035975,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.00018585,
+      "n": 3
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.000934815,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.021043999999999997,
+      "n": 3
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.02958,
+      "n": 3
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.0003741,
+      "n": 3
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.0006745,
+      "n": 3
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.00604688,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.001101,
+      "n": 3
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.020929999999999997,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.0007449,
+      "n": 3
+    },
+    {
+      "model": "qwen/qwen3.7-max",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.00594,
+      "n": 3
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "category": "yaml_config",
+      "library": "yaml",
+      "success_rate": 1.0,
+      "cost_usd": 0.0017599400000000002,
+      "n": 3
+    }
+  ]
+}
