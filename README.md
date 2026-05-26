@@ -2,6 +2,8 @@
 
 **agentic-fit** is a benchmark that measures, for a given model, which Python library a coding agent uses most reliably and at the lowest cost. For each task category it runs the agent once per candidate library in an isolated environment, scores the output with a pytest gate, and records success and cost per `(library × model)`. The result is a per-model, per-library profile of which library to reach for in each category.
 
+**Live explorer** ([jeromesolis.github.io/agentic-fit](https://jeromesolis.github.io/agentic-fit/)): pick a task, flip between cost and success rate, and see which library each model uses best.
+
 ---
 
 ## Motivation
