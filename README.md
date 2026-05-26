@@ -1,6 +1,6 @@
 # agentic-fit
 
-**agentic-fit** is a benchmark that measures how efficiently a coding agent uses a given Python library, expressed as token-cost-to-success and first-try success rate per `(library × version × model)`. For each task category it runs the agent once per candidate library in a fully isolated environment, scores the output with a pytest gate, and records token usage. The result is a per-model, per-library efficiency profile rather than a single aggregate score.
+**agentic-fit** is a benchmark that measures, for a given model, which Python library a coding agent uses most reliably and at the lowest cost. For each task category it runs the agent once per candidate library in an isolated environment, scores the output with a pytest gate, and records success and cost per `(library × model)`. The result is a per-model, per-library profile of which library to reach for in each category.
 
 ---
 
@@ -18,11 +18,12 @@ That corner is what this benchmark measures, and it is deliberately a modest one
 
 ```bash
 uv sync
-cp .env.example .env        # set ANTHROPIC_API_KEY
-uv run agentic-fit --model claude-sonnet-4-6 --reps 5 --out results/run.jsonl
+cp .env.example .env        # set OPENROUTER_API_KEY
+python -m agentic_fit.crosslab --dry-run      # the model set and a cost estimate
+python -m agentic_fit.crosslab --reps 3 --sandbox docker
 ```
 
-Add `--sandbox docker` to run each generated solution in a hardened container (build it from the `Dockerfile` first).
+A full 16-model run costs roughly $16 of OpenRouter credit, so trim `agentic_fit/crosslab_models.py` to a subset for a cheaper pass. `python scripts/smoke_openrouter.py` validates your key and that the model ids resolve first. Add `--sandbox local` if you do not have Docker. The single-model `agentic-fit --model …` path still works for one model at a time.
 
 ---
 
@@ -45,13 +46,14 @@ Eight categories, each testing agent competence with a specific class of Python 
 
 ## Findings summary
 
-Snapshot: **May 2026** | Models: **`claude-sonnet-4-6`**, **`claude-haiku-4-5`**
+Snapshot: **May 2026** | 16 models across nine vendors
 
-| Claim | Result |
+| Finding | Result |
 |---|---|
-| **C1, variance is real** | Within-category token spread up to 3.97× (Sonnet) and 11.86× (Haiku); the cheapest library inverts between models in 3 of 7 categories |
-| **C2, not explained by popularity** | 50% pooled pairwise concordance with PyPI download rank (chance level); 7 cross-model inversions that a static popularity signal cannot produce |
-| **C3, actionable for weaker models** | Steering Haiku to the model-specific cheapest library saves ~36% tokens; steering Sonnet saves ~0% (it already self-selects efficiently) |
+| The best library is model-specific | the best library differs by model in 6 of 7 categories |
+| The choice matters | cost varies a median 1.7×, up to 24×, even among libraries that all work |
+| Popularity does not predict it | 54% concordance with PyPI download rank, barely above chance |
+| The per-model signal is actionable | one universal default costs ~1.25× more, and fails where a per-model pick works |
 
 Full methodology, per-category numbers, and caveats: [`docs/FINDINGS.md`](docs/FINDINGS.md)
 

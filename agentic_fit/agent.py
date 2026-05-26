@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Literal, Protocol
 
 from .backends import LocalBackend, SandboxBackend, SandboxJob
+from .budget import run_cost
 from .imports import imported_modules
 from .models import RunResult, Task
 from .sandbox import SandboxResult
@@ -78,6 +79,70 @@ class AnthropicClient:
         return LLMResponse(text, input_tokens, usage.output_tokens)
 
 
+class OpenRouterClient:
+    """LLMClient over OpenRouter (OpenAI-compatible). Returns text + token counts.
+
+    Cost is NOT read from OpenRouter here; it is computed downstream from the
+    unified price table, so every model is priced on the same basis.
+    """
+
+    def __init__(self, model: str, max_tokens: int = 4096):
+        import os
+
+        from openai import OpenAI
+
+        self._client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=os.environ["OPENROUTER_API_KEY"],
+            max_retries=6,   # SDK retries connection errors / 429 / 5xx with exponential backoff
+            timeout=120.0,   # per-request ceiling so a hung call can't stall an overnight run
+        )
+        self._model = model
+        self._max_tokens = max_tokens
+
+    @staticmethod
+    def _with_system(system: str, messages: list[dict], fold: bool) -> list[dict]:
+        if not fold:
+            return [{"role": "system", "content": system}, *messages]
+        # Fold system text into the first user message for models without a system role.
+        out = [dict(m) for m in messages]
+        if out and out[0].get("role") == "user":
+            out[0]["content"] = f"{system}\n\n{out[0]['content']}"
+        else:
+            out.insert(0, {"role": "user", "content": system})
+        return out
+
+    def _create(self, msgs: list[dict]):
+        return self._client.chat.completions.create(
+            model=self._model, max_tokens=self._max_tokens, messages=msgs
+        )
+
+    def complete(self, system: str, messages: list[dict]) -> LLMResponse:
+        import openai
+
+        try:
+            resp = self._create(self._with_system(system, messages, fold=False))
+        except openai.BadRequestError:
+            # Likely an unsupported system role/param; retry once with system folded in.
+            resp = self._create(self._with_system(system, messages, fold=True))
+        text = (resp.choices[0].message.content if resp.choices else "") or ""
+        usage = resp.usage
+        in_tok = (getattr(usage, "prompt_tokens", 0) or 0) if usage else 0
+        out_tok = (getattr(usage, "completion_tokens", 0) or 0) if usage else 0
+        return LLMResponse(text, in_tok, out_tok)
+
+
+_CLIENTS = {"anthropic": AnthropicClient, "openrouter": OpenRouterClient}
+
+
+def make_client(provider: str, model: str) -> LLMClient:
+    try:
+        cls = _CLIENTS[provider]
+    except KeyError:
+        raise ValueError(f"unknown provider: {provider!r}")
+    return cls(model=model)
+
+
 def extract_code(text: str) -> str:
     m = _CODE_BLOCK.search(text)
     return m.group(1).strip() if m else text.strip()
@@ -106,6 +171,7 @@ def run_agent(
     *,
     mode: Literal["assigned", "free_unconstrained", "free_constrained"] = "assigned",
     backend: SandboxBackend | None = None,
+    provider: str = "",
 ) -> RunResult:
     backend = backend or LocalBackend()
     free = mode != "assigned"
@@ -119,7 +185,16 @@ def run_agent(
     chosen: str | None = None
 
     for i in range(1, max_iters + 1):
-        resp = client.complete(system, messages)
+        try:
+            resp = client.complete(system, messages)
+        except Exception as exc:
+            # Provider/API failure (rate limit, null usage, malformed response, etc.).
+            # Record a per-cell error and stop, so one bad cell can't crash a whole
+            # multi-model run. Not LLM-fixable.
+            return RunResult(task.id, library, rep, model, False, 0, 0, i, in_tok, out_tok,
+                             error=f"client error: {exc}"[:200], category=task.category,
+                             status="error", chosen_library=chosen,
+                             cost_usd=run_cost(model, in_tok, out_tok), provider=provider)
         in_tok += resp.input_tokens
         out_tok += resp.output_tokens
         code = extract_code(resp.text)
@@ -150,7 +225,8 @@ def run_agent(
             return RunResult(task.id, library, rep, model, True,
                              last.tests_passed, last.tests_total, i, in_tok, out_tok,
                              category=task.category, version=last.version,
-                             status=last.status, chosen_library=chosen)
+                             status=last.status, chosen_library=chosen,
+                             cost_usd=run_cost(model, in_tok, out_tok), provider=provider)
         messages.append({"role": "assistant", "content": resp.text})
         retry = "Fix solution.py." if free else f"Fix solution.py. Still use only `{library}`."
         messages.append({"role": "user", "content":
@@ -160,4 +236,5 @@ def run_agent(
                      last.tests_passed, last.tests_total, max_iters,
                      in_tok, out_tok, error=(last.stderr or "tests failed")[:200],
                      category=task.category, version=last.version,
-                     status=last.status, chosen_library=chosen)
+                     status=last.status, chosen_library=chosen,
+                     cost_usd=run_cost(model, in_tok, out_tok), provider=provider)

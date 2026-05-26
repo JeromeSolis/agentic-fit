@@ -80,6 +80,13 @@ def main() -> None:
               f"· reps={args.reps} · est ${est['est_cost_usd']} (cap ${args.max_spend})")
         return
 
+    if args.sandbox == "docker":
+        from .backends import docker_available
+        if not docker_available():
+            raise SystemExit(
+                "Docker selected (--sandbox docker) but the daemon isn't reachable. "
+                "Start Docker, or re-run with --sandbox local. No spend incurred.")
+
     out = Path(args.out)
     print(f"agentic-fit: {est['cells']} cells · model={args.model} · reps={args.reps} "
           f"· est ${est['est_cost_usd']} · cap ${args.max_spend} · sandbox={args.sandbox}", flush=True)

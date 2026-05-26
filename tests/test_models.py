@@ -44,3 +44,23 @@ def test_runresult_from_json_tolerates_legacy_line():
     assert r.version is None
     assert r.chosen_library is None
     assert r.status == ""
+
+
+def test_runresult_roundtrips_cost_and_provider():
+    from agentic_fit.models import RunResult
+    r = RunResult(
+        task_id="t", library="l", rep=0, model="m", success=True,
+        tests_passed=1, tests_total=1, iterations=1, input_tokens=10, output_tokens=5,
+        category="c", version="v", status="passed", cost_usd=0.0012, provider="openrouter",
+    )
+    back = RunResult.from_json(r.to_json())
+    assert back == r
+    assert back.cost_usd == 0.0012
+    assert back.provider == "openrouter"
+
+
+def test_runresult_defaults_cost_and_provider():
+    from agentic_fit.models import RunResult
+    r = RunResult("t", "l", 0, "m", True, 1, 1, 1, 10, 5)
+    assert r.cost_usd is None
+    assert r.provider == ""

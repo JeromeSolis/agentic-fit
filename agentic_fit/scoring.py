@@ -94,3 +94,40 @@ def category_variance_summary(scores: list[CategoryScore]) -> dict:
             "token_ratio": round(hi / lo, 2) if lo else None,
         }
     return summary
+
+
+@dataclass
+class CrossLabScore:
+    model: str
+    category: str
+    library: str
+    n: int
+    success_rate: float
+    median_cost_usd: float
+    median_tokens: float
+
+
+def score_crosslab(results: list[RunResult]) -> list[CrossLabScore]:
+    groups: dict[tuple[str, str, str], list[RunResult]] = defaultdict(list)
+    for r in results:
+        groups[(r.model, r.category, r.library)].append(r)
+    scores: list[CrossLabScore] = []
+    for (model, category, library), rs in sorted(groups.items()):
+        success_rate = sum(r.success for r in rs) / len(rs)
+        costs = [r.cost_usd for r in rs if r.cost_usd is not None]
+        median_cost = statistics.median(costs) if costs else 0.0
+        median_tokens = statistics.median(r.total_tokens for r in rs)
+        scores.append(CrossLabScore(model, category, library, len(rs),
+                                    success_rate, median_cost, median_tokens))
+    return scores
+
+
+def crosslab_best(scores: list[CrossLabScore]) -> dict[tuple[str, str], CrossLabScore]:
+    """Best library per (model, category): highest success rate, then lowest cost."""
+    by_key: dict[tuple[str, str], list[CrossLabScore]] = defaultdict(list)
+    for s in scores:
+        by_key[(s.model, s.category)].append(s)
+    return {
+        key: max(cells, key=lambda c: (c.success_rate, -c.median_cost_usd))
+        for key, cells in by_key.items()
+    }
