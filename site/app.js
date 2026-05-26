@@ -1,4 +1,4 @@
-// agentic-fit showcase explorer — no framework, no build.
+// agentic-fit showcase explorer: no framework, no build.
 const state = { data: null, category: null, metric: "cost", activeModels: new Set(),
                 sortKey: "cost_usd", sortDir: 1, libFilter: null };
 
@@ -37,7 +37,7 @@ function renderHeatmap() {
   const lookup = {};
   for (const c of cells) lookup[c.model + "|" + c.library] = c;
 
-  let html = `<div class="ch"></div>` +
+  let html = `<div class="ch lib-head">Library</div>` +
     models.map((m) => `<div class="ch" title="${m}">${shortLabel(m)}</div>`).join("");
   for (const lib of libs) {
     html += `<div class="rl">${lib}</div>`;
@@ -57,6 +57,14 @@ function renderHeatmap() {
   renderLegend();
 }
 
+function renderTaskMeta() {
+  const t = (state.data.tasks || {})[state.category];
+  $("#task-summary").textContent = t ? t.summary : "";
+  $("#task-prompt").textContent = t ? t.prompt : "";
+  $("#task-libs").textContent = t && t.candidate_libraries.length
+    ? "Candidate libraries: " + t.candidate_libraries.join(" · ") : "";
+}
+
 function renderLegend() {
   const lo = state.metric === "cost" ? "cheaper" : "lower";
   const hi = state.metric === "cost" ? "pricier" : "higher";
@@ -69,23 +77,33 @@ function renderTable() {
   const cat = state.category;
   let rows = cellsFor(cat).filter((c) => state.activeModels.has(c.model));
   if (state.libFilter) rows = rows.filter((c) => c.library === state.libFilter);
-  rows.sort((a, b) => (a[state.sortKey] - b[state.sortKey]) * state.sortDir);
+  rows.sort((a, b) => {
+    const x = a[state.sortKey], y = b[state.sortKey];
+    const cmp = typeof x === "number" ? x - y : String(x).localeCompare(String(y));
+    return cmp * state.sortDir;
+  });
   const body = $("#drilldown tbody");
   body.innerHTML = rows.map((c) =>
     `<tr><td>${shortLabel(c.model)}</td><td>${c.library}</td>`
     + `<td class="num">${pct(c.success_rate)}</td>`
     + `<td class="num">$${fmtCost(c.cost_usd)}</td>`
     + `<td class="num">${c.n}</td></tr>`).join("");
-  document.querySelectorAll("#drilldown th.sortable").forEach((th) =>
-    th.classList.toggle("active", th.dataset.sort === state.sortKey));
+  document.querySelectorAll("#drilldown th.sortable").forEach((th) => {
+    const active = th.dataset.sort === state.sortKey;
+    th.classList.toggle("active", active);
+    if (active) th.dataset.dir = state.sortDir;
+  });
 }
 
 function renderControls() {
-  const sel = $("#category-select");
-  sel.innerHTML = state.data.categories.map((c) => `<option>${c}</option>`).join("");
-  sel.value = state.category;
-  sel.addEventListener("change", () => {
-    state.category = sel.value; state.libFilter = null; renderHeatmap(); renderTable();
+  const tabs = $("#category-tabs");
+  tabs.innerHTML = state.data.categories.map((c) =>
+    `<button data-cat="${c}" class="cat-tab${c === state.category ? " on" : ""}">${c}</button>`).join("");
+  tabs.addEventListener("click", (e) => {
+    const btn = e.target.closest("button"); if (!btn) return;
+    state.category = btn.dataset.cat; state.libFilter = null;
+    tabs.querySelectorAll("button").forEach((b) => b.classList.toggle("on", b === btn));
+    renderHeatmap(); renderTable(); renderTaskMeta();
   });
 
   $("#metric-toggle").addEventListener("click", (e) => {
@@ -122,5 +140,8 @@ async function init() {
   renderControls();
   renderHeatmap();
   renderTable();
+  renderTaskMeta();
+  $("#footer-meta").textContent =
+    `Snapshot ${state.data.snapshot} · ${state.data.models.length} models across nine vendors · ${state.data.cells.length} measured cells.`;
 }
 init();

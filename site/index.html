@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>agentic-fit — which Python library does your model use best?</title>
+  <title>agentic-fit: which Python library does your model use best?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -12,17 +12,24 @@
 <body>
   <header class="hero">
     <h1>The best Python library is model-specific.</h1>
-    <p class="lede" id="hero-lede">A benchmark of which library a coding agent uses most reliably, at the lowest cost — measured across 16 models, not assumed.</p>
+    <p class="lede" id="hero-lede">We measured which Python library a coding agent reaches for most reliably, and at the lowest cost, across 16 models from nine vendors.</p>
     <p class="repo-link"><a href="https://github.com/JeromeSolis/agentic-fit">View the benchmark on GitHub →</a></p>
   </header>
 
   <main>
     <section class="explorer">
       <h2>Explore the results</h2>
+      <div class="bar-label">Task</div>
+      <div class="category-bar" id="category-tabs" role="tablist" aria-label="Category"></div>
+      <div class="task-meta">
+        <p class="task-summary" id="task-summary"></p>
+        <details class="task-prompt-wrap">
+          <summary>View the task prompt</summary>
+          <pre class="task-prompt" id="task-prompt"></pre>
+          <p class="task-libs" id="task-libs"></p>
+        </details>
+      </div>
       <div class="controls">
-        <label class="ctrl">Category
-          <select id="category-select"></select>
-        </label>
         <div class="ctrl metric-toggle" id="metric-toggle" role="group" aria-label="Metric">
           <button data-metric="cost" class="on">cost ($/task)</button>
           <button data-metric="success">success rate</button>
@@ -34,28 +41,36 @@
       </div>
       <div class="heatmap-wrap"><div id="heatmap"></div></div>
       <div class="legend" id="legend"></div>
+      <div class="drilldown-wrap">
       <table class="drilldown" id="drilldown">
         <thead>
           <tr>
-            <th>Model</th><th>Library</th>
+            <th class="sortable" data-sort="model">Model</th>
+            <th class="sortable" data-sort="library">Library</th>
             <th class="sortable" data-sort="success_rate">Success</th>
             <th class="sortable" data-sort="cost_usd">$/task</th>
-            <th>n</th>
+            <th class="sortable" data-sort="n" title="Repeated runs per cell. Success rate is passes divided by n; $/task is the median over these runs.">n</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
+      </div>
     </section>
 
     <section class="findings">
       <h2>What the benchmark found</h2>
-      <ol id="findings-list"></ol>
+      <ol id="findings-list">
+        <li><b>The right library depends on the model.</b> In six of seven head-to-head categories the cheapest reliable library changes from one model to the next. Only command-line parsing is unanimous.</li>
+        <li><b>The choice changes the bill.</b> Among libraries that all work, cost varies a median of 1.7 times, and up to 24 times at the extreme.</li>
+        <li><b>Popularity does not tell you the answer.</b> Agreement between a library's PyPI download rank and its cost rank for the agent is 54 percent, barely above chance.</li>
+        <li><b>The per-model signal is worth considering.</b> A single default for every model costs about 1.25 times more, and sometimes fails outright where a model-specific choice succeeds.</li>
+      </ol>
       <p><a href="https://github.com/JeromeSolis/agentic-fit/blob/main/docs/FINDINGS.md">Full methodology and caveats →</a></p>
     </section>
 
     <section class="motivation">
       <h2>Why this exists</h2>
-      <p id="motivation-text"></p>
+      <p id="motivation-text">Agents lean on the libraries and documentation that people build and maintain, yet the signals that once rewarded that work do not capture the value agents now pull from it. agentic-fit is a small, repeatable reading of which libraries agents actually use well, so a conversation about a fairer incentive loop between agents and the people building what they depend on can rest on measurement rather than intuition.</p>
       <p><a href="https://github.com/JeromeSolis/agentic-fit#motivation">Read the full motivation →</a></p>
     </section>
   </main>
