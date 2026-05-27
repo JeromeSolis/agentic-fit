@@ -34,11 +34,16 @@
           <button data-metric="cost" class="on">cost ($/task)</button>
           <button data-metric="success">success rate</button>
         </div>
-        <details class="ctrl model-filter">
-          <summary>Models</summary>
-          <div id="model-checkboxes"></div>
-        </details>
+        <button class="ctrl best-toggle on" id="best-toggle" aria-pressed="true" title="Ring each model's lowest-cost reliable library (highest success rate, then lowest median cost).">Best library per model</button>
       </div>
+      <details class="model-filter">
+        <summary>Models <span id="model-count"></span></summary>
+        <div class="model-actions">
+          <button type="button" id="models-all">All</button>
+          <button type="button" id="models-none">None</button>
+        </div>
+        <div id="model-chips"></div>
+      </details>
       <div class="heatmap-wrap"><div id="heatmap"></div></div>
       <div class="legend" id="legend"></div>
       <div class="drilldown-wrap">
