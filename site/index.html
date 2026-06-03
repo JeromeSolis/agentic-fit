@@ -31,8 +31,8 @@
       </div>
       <div class="bar-label">Mode</div>
       <div class="ctrl mode-toggle" id="mode-toggle" role="group" aria-label="Mode">
-        <button data-mode="constrained" class="on" aria-pressed="true">Constrained</button>
-        <button data-mode="free" aria-pressed="false">Free-choice</button>
+        <button data-mode="assigned" class="on" aria-pressed="true">Assigned</button>
+        <button data-mode="free" aria-pressed="false">Free</button>
       </div>
       <div class="controls">
         <div class="ctrl metric-toggle" id="metric-toggle" role="group" aria-label="Metric">
@@ -40,7 +40,7 @@
           <button data-metric="success">success rate</button>
         </div>
         <span class="metric-note" id="metric-note" hidden>cell = default tax</span>
-        <button class="ctrl best-toggle on" id="best-toggle" aria-pressed="true" title="Constrained: rings each model's lowest-cost reliable library (highest success, then lowest cost). Free-choice: rings each model's constrained-best library.">Best library per model</button>
+        <button class="ctrl best-toggle on" id="best-toggle" aria-pressed="true" title="Assigned: rings each model's lowest-cost reliable library (highest success, then lowest cost). Free: rings each model's assigned-best library.">Best library per model</button>
       </div>
       <details class="model-filter">
         <summary>Models <span id="model-count"></span></summary>

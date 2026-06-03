@@ -87,7 +87,7 @@ table.drilldown { width:100%; border-collapse:collapse; }
 
 /* Free-choice mode: segmented toggle, disabled-metric state, caption, and
    tax-bucket cell colors. Soft modifier (dashed border) flags off-menu picks
-   whose tax mixes free-run and constrained costs. */
+   whose tax mixes free-run and assigned costs. */
 .mode-toggle button {
   font-family:var(--mono); font-size:12px; padding:5px 11px;
   border:1px solid var(--rule); background:#fffdf7; color:var(--muted);

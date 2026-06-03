@@ -1,7 +1,7 @@
 // agentic-fit showcase explorer: no framework, no build.
 const state = { data: null, category: null, metric: "cost", activeModels: new Set(),
                 sortKey: "cost_usd", sortDir: 1, libFilter: null, showBest: true,
-                mode: "constrained", freeByCell: {} };
+                mode: "assigned", freeByCell: {} };
 
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
@@ -90,7 +90,7 @@ function renderHeatmap() {
 // Free mode: rows are the candidate libraries plus any off-menu picks the
 // free dataset surfaces for this category. Each model column lights one cell
 // (the modal pick), colored by default tax. The best-toggle ring re-targets
-// to the constrained-best library row.
+// to the assigned-best library row.
 function renderFreeHeatmap() {
   const cat = state.category;
   const models = state.data.models.filter((m) => state.activeModels.has(m));
@@ -125,7 +125,7 @@ function renderFreeHeatmap() {
         const tip = `${shortLabel(m)} · ${lib}: ${f.tax.toFixed(2)}× default tax${softNote}`;
         html += `<div class="${cls.join(" ")}" data-lib="${lib}" title="${tip}">${f.tax.toFixed(2)}×</div>`;
       } else if (isBest) {
-        html += `<div class="cell empty best-ring" title="${shortLabel(m)} · constrained-best: ${lib}">·</div>`;
+        html += `<div class="cell empty best-ring" title="${shortLabel(m)} · assigned-best: ${lib}">·</div>`;
       } else {
         html += `<div class="cell empty">·</div>`;
       }
@@ -167,16 +167,16 @@ function renderFreeLegend() {
     swatch("tax-12", "≤1.25× low") +
     swatch("tax-15", "≤1.75× medium") +
     swatch("tax-2p", ">1.75× high") +
-    `<span class="legend-soft" title="Off-menu picks: tax mixes free-run and constrained costs.">dashed = off-menu (soft)</span>`;
+    `<span class="legend-soft" title="Off-menu picks: tax mixes free-run and assigned costs.">dashed = off-menu (soft)</span>`;
   if (state.showBest) {
-    html += `<span class="legend-best"><span class="sw best-sw"></span>constrained-best library for that model</span>`;
+    html += `<span class="legend-best"><span class="sw best-sw"></span>assigned-best library for that model</span>`;
   }
   $("#legend").innerHTML = html;
 }
 
 function renderTable() {
   if (state.mode === "free") { renderFreeTable(); return; }
-  setConstrainedHead();
+  setAssignedHead();
   const cat = state.category;
   let rows = cellsFor(cat).filter((c) => state.activeModels.has(c.model));
   if (state.libFilter) rows = rows.filter((c) => c.library === state.libFilter);
@@ -198,7 +198,7 @@ function renderTable() {
   });
 }
 
-const CONSTRAINED_HEAD = `<tr>
+const ASSIGNED_HEAD = `<tr>
   <th class="sortable" data-sort="model">Model</th>
   <th class="sortable" data-sort="library">Library</th>
   <th class="sortable" data-sort="success_rate">Success</th>
@@ -215,11 +215,11 @@ const FREE_HEAD = `<tr>
   <th class="sortable" data-sort="n">n</th>
 </tr>`;
 
-function setConstrainedHead() {
+function setAssignedHead() {
   const thead = $("#drilldown thead");
-  if (thead.dataset.mode !== "constrained") {
-    thead.innerHTML = CONSTRAINED_HEAD;
-    thead.dataset.mode = "constrained";
+  if (thead.dataset.mode !== "assigned") {
+    thead.innerHTML = ASSIGNED_HEAD;
+    thead.dataset.mode = "assigned";
     wireSortHeaders();
   }
 }
@@ -354,7 +354,7 @@ function renderControls() {
     state.activeModels.clear(); refreshModels();
   });
 
-  // Sort-header wiring lives in setConstrainedHead/setFreeHead, since the
+  // Sort-header wiring lives in setAssignedHead/setFreeHead, since the
   // thead innerHTML is swapped on mode change and old listeners would die.
 }
 
