@@ -5,6 +5,7 @@ const state = { data: null, category: null, metric: "cost", activeModels: new Se
 
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
+const escHtml = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const shortLabel = (id) => id.includes("/") ? id.split("/")[1] : id;
 const fmtCost = (v) => (v >= 0.001 ? v.toFixed(3) : v.toFixed(4));
 const cellCost = (v) => fmtCost(v).replace(/^0/, ""); // ".004"
@@ -113,7 +114,8 @@ function renderFreeHeatmap() {
   let html = `<div class="ch lib-head">Library</div>` +
     models.map((m) => `<div class="ch" title="${m}">${shortLabel(m)}</div>`).join("");
   for (const lib of libs) {
-    const label = offMenuSet.has(lib) ? `<em>${lib}</em>` : lib;
+    const safeLib = escHtml(lib);
+    const label = offMenuSet.has(lib) ? `<em>${safeLib}</em>` : safeLib;
     html += `<div class="rl">${label}</div>`;
     for (const m of models) {
       const f = state.freeByCell[m + "|" + cat];
@@ -260,14 +262,17 @@ function renderFreeTable() {
     return cmp * state.sortDir;
   });
   const body = $("#drilldown tbody");
-  body.innerHTML = rows.map((f) =>
-    `<tr><td>${shortLabel(f.model)}</td>`
-    + `<td>${f.pick_off_menu ? `<em>${f.pick}</em>` : f.pick}</td>`
-    + `<td class="num">${f.tax.toFixed(2)}×</td>`
-    + `<td class="num">$${fmtCost(f.free_cost_usd)}</td>`
-    + `<td class="num">$${fmtCost(f.best_cost_usd)}</td>`
-    + `<td>${f.best_library}</td>`
-    + `<td class="num">${f.n}</td></tr>`).join("");
+  body.innerHTML = rows.map((f) => {
+    const pickHtml = escHtml(f.pick);
+    const pickCell = f.pick_off_menu ? `<em>${pickHtml}</em>` : pickHtml;
+    return `<tr><td>${shortLabel(f.model)}</td>`
+      + `<td>${pickCell}</td>`
+      + `<td class="num">${f.tax.toFixed(2)}×</td>`
+      + `<td class="num">$${fmtCost(f.free_cost_usd)}</td>`
+      + `<td class="num">$${fmtCost(f.best_cost_usd)}</td>`
+      + `<td>${escHtml(f.best_library)}</td>`
+      + `<td class="num">${f.n}</td></tr>`;
+  }).join("");
   $$("#drilldown th.sortable").forEach((th) => {
     const active = th.dataset.sort === key;
     th.classList.toggle("active", active);
