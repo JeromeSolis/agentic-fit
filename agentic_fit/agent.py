@@ -182,51 +182,44 @@ def run_agent(
     messages: list[dict] = [{"role": "user", "content": _user_prompt(task, library, mode)}]
     in_tok = out_tok = 0
     last = None
-    chosen: str | None = None
+    final_code = ""
+    final_imports: list[str] | None = None
 
     for i in range(1, max_iters + 1):
         try:
             resp = client.complete(system, messages)
         except Exception as exc:
-            # Provider/API failure (rate limit, null usage, malformed response, etc.).
-            # Record a per-cell error and stop, so one bad cell can't crash a whole
-            # multi-model run. Not LLM-fixable.
+            # Provider/API failure. Record a per-cell error and stop, so one bad
+            # cell can't crash a whole multi-model run. Not LLM-fixable.
             return RunResult(task.id, library, rep, model, False, 0, 0, i, in_tok, out_tok,
                              error=f"client error: {exc}"[:200], category=task.category,
-                             status="error", chosen_library=chosen,
-                             cost_usd=run_cost(model, in_tok, out_tok), provider=provider)
+                             status="error", cost_usd=run_cost(model, in_tok, out_tok),
+                             provider=provider, imports=final_imports, solution_code=final_code)
         in_tok += resp.input_tokens
         out_tok += resp.output_tokens
         code = extract_code(resp.text)
-        if free:
-            # Filter with the comprehensive stdlib set (same one ensure_venv_for uses),
-            # so chosen_library/install_libraries never record a stdlib module as a "choice".
-            detected = [m for m in imported_modules(code) if m not in STDLIB_ALL]
-            install: list[str] | None = detected
-            if not detected:
-                chosen = None
-            elif len(detected) == 1:
-                chosen = detected[0]
-            else:
-                chosen = "+".join(detected)
-        else:
-            install = None
+        final_code = code
+        final_imports = imported_modules(code)
+        # Free mode: install whatever third-party packages the agent imported. Use the
+        # simple stdlib filter so we never pip-install stdlib backports
+        # (dataclasses/argparse/datetime). Interpreting the "pick" happens offline in
+        # agentic_fit.picks, not here.
+        install = [m for m in final_imports if m not in STDLIB_ALL] if free else None
         job = SandboxJob(solution_code=code, test_code=test_code, library=library,
                          competing_libraries=competing, enforce_import=enforce,
                          install_libraries=install)
         try:
             last = backend.run(job)
         except Exception as exc:
-            # Backend/infra failure (e.g. a crashed container) — record it and stop
-            # so one bad cell can't crash the whole matrix run. Not LLM-fixable.
+            # Backend/infra failure (e.g. a crashed container) — record it and stop.
             last = SandboxResult(False, 0, 0, "", str(exc)[:300], status="error")
             break
         if last.passed:
             return RunResult(task.id, library, rep, model, True,
                              last.tests_passed, last.tests_total, i, in_tok, out_tok,
                              category=task.category, version=last.version,
-                             status=last.status, chosen_library=chosen,
-                             cost_usd=run_cost(model, in_tok, out_tok), provider=provider)
+                             status=last.status, cost_usd=run_cost(model, in_tok, out_tok),
+                             provider=provider, imports=final_imports, solution_code=final_code)
         messages.append({"role": "assistant", "content": resp.text})
         retry = "Fix solution.py." if free else f"Fix solution.py. Still use only `{library}`."
         messages.append({"role": "user", "content":
@@ -236,5 +229,5 @@ def run_agent(
                      last.tests_passed, last.tests_total, max_iters,
                      in_tok, out_tok, error=(last.stderr or "tests failed")[:200],
                      category=task.category, version=last.version,
-                     status=last.status, chosen_library=chosen,
-                     cost_usd=run_cost(model, in_tok, out_tok), provider=provider)
+                     status=last.status, cost_usd=run_cost(model, in_tok, out_tok),
+                     provider=provider, imports=final_imports, solution_code=final_code)

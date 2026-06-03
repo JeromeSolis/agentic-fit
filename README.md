@@ -18,26 +18,66 @@ That corner is what this benchmark measures, and it is deliberately a modest one
 
 ## Quickstart
 
+Setup:
+
 ```bash
 uv sync
-cp .env.example .env        # set OPENROUTER_API_KEY
-python -m agentic_fit.crosslab --dry-run      # the model set and a cost estimate
-python -m agentic_fit.crosslab --reps 3 --sandbox docker
+cp .env.example .env        # set OPENROUTER_API_KEY (gitignored, never commit)
 ```
 
-A full 16-model run costs roughly $16 of OpenRouter credit, so trim `agentic_fit/crosslab_models.py` to a subset for a cheaper pass. `python scripts/smoke_openrouter.py` validates your key and that the model ids resolve first. Add `--sandbox local` if you do not have Docker. The single-model `agentic-fit --model …` path still works for one model at a time.
+Get oriented before you run anything:
+
+```bash
+make info                   # what this benchmark measures, plus the two modes
+make tasks                  # the 7 categories with a one-line summary and candidates
+make smoke                  # validate key, model ids, Docker, registry, results dir
+```
+
+Two run modes, and every command names which one it is. `--free` lets each model pick its own library (the free-choice signal). `--assigned` sweeps each candidate library per model (the constrained head-to-head). A free run costs about one third of an assigned run.
+
+```bash
+# Free-choice
+make dry-run-free                    # cost estimate, no spend
+make probe-free                      # cheap reps=1 validation (Docker)
+make run-free                        # full free run; confirms cost first
+
+# Assigned / constrained
+make dry-run-assigned
+make probe-assigned
+make run-assigned
+```
+
+Or call the CLI directly (mode is required):
+
+```bash
+uv run agentic-fit run --free --reps 3 --sandbox docker          # confirms before spending
+uv run agentic-fit run --assigned --only anthropic/claude-opus-4.7
+uv run agentic-fit run --free --dry-run                          # estimate only, no spend
+```
+
+After a run:
+
+```bash
+make summary FILE=results/<file>.jsonl    # render the summary + default tax
+uv run agentic-fit results                # list past runs
+uv run agentic-fit results inspect <file>
+uv run agentic-fit summarize <file> --constrained <constrained-file> --json | jq .
+```
+
+Every `run` preflights (key, Docker, registry), prints a per-model cost estimate, and asks to confirm before any spend (`--yes` to skip for unattended use, `--dry-run` to just estimate). `--sandbox docker` runs each solution in a hardened, network-isolated container (build it from the `Dockerfile` first); `--sandbox local` uses cached per-library venvs if Docker is not available. `--max-spend` caps total API spend. Output is auto-named `results/crosslab_{mode}_reps{N}_{date}.jsonl`.
+
+A full free run is roughly $5 to $6 of OpenRouter credit; a full assigned run is roughly $16. Snapshot date is May 2026, and pinned model versions can be deprecated by their vendors over time, so the exact numbers age with the snapshot.
 
 ---
 
 ## The task set
 
-Eight categories, each testing agent competence with a specific class of Python library:
+Seven categories, each testing agent competence with a specific class of Python library:
 
 | Category | What it tests |
 |---|---|
 | `cli_parsing` | Parsing named command-line options with a required argument and an integer default (argparse, click, typer) |
 | `data_validation` | Validating and coercing a flat user record with type conversion and error raising (pydantic, marshmallow, dataclasses) |
-| `data_validation_hard` | Validating a nested order dict with per-item coercion and field-level error conditions, a harder nested-schema variant (pydantic, marshmallow, dataclasses) |
 | `date_handling` | Parsing a human date/time string and returning an ISO-8601 UTC string, with error on unparseable input (datetime, dateutil, arrow) |
 | `http_client` | Making an HTTP GET, parsing the JSON body, and returning a named field, raising on non-200 status (requests, httpx, urllib3) |
 | `retrying` | Wrapping a callable with up to 3 retry attempts on ValueError, re-raising after exhaustion, using a retry library (tenacity, backoff, stamina) |
@@ -56,6 +96,9 @@ Snapshot: **May 2026** | 16 models across nine vendors
 | The choice matters | cost varies a median 1.7×, up to 24×, even among libraries that all work |
 | Popularity does not predict it | 54% concordance with PyPI download rank, barely above chance |
 | The per-model signal is actionable | one universal default costs ~1.25× more, and fails where a per-model pick works |
+| Models converge on a shared pick per category | free picks match the model's own best library 37.5% of the time, the default tax is about 1.22× on average, and download rank coincides with the converged pick only about a quarter of the time |
+
+The free-choice numbers come from the v0.3.0 dataset; see [`docs/FINDINGS.md`](docs/FINDINGS.md) for the full section.
 
 ### Best library by category
 

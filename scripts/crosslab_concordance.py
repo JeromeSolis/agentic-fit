@@ -2,7 +2,7 @@
 is cheapest for an agent? Reuses the C2 pairwise-concordance logic across every
 model in a cross-lab results file.
 
-    python scripts/crosslab_concordance.py results/crosslab_reps3_2026-05-25.jsonl
+    python scripts/crosslab_concordance.py results/crosslab_assigned_reps3_2026-05-25.jsonl
 """
 from __future__ import annotations
 
@@ -31,4 +31,4 @@ def main(path: str) -> None:
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else "results/crosslab_reps3_2026-05-25.jsonl")
+    main(sys.argv[1] if len(sys.argv) > 1 else "results/crosslab_assigned_reps3_2026-05-25.jsonl")

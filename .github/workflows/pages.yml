@@ -7,7 +7,7 @@ on:
       - "site/**"
       - "scripts/build_site_data.py"
       - "tasks/**"
-      - "results/crosslab_reps3_2026-05-25.jsonl"
+      - "results/crosslab_assigned_reps3_2026-05-25.jsonl"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
