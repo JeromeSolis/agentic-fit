@@ -1,6 +1,6 @@
 # agentic-fit: Findings
 
-**Snapshot:** May 2026 · **Models:** 16, across nine vendors (Anthropic, OpenAI, Google, DeepSeek, Qwen, Moonshot, Mistral, Cohere, Z.ai)
+**Snapshot:** May 2026 (constrained 2026-05-25, free-choice 2026-05-27) · **Models:** 16, across nine vendors (Anthropic, OpenAI, Google, DeepSeek, Qwen, Moonshot, Mistral, Cohere, Z.ai)
 
 ## The question
 
@@ -22,9 +22,19 @@ Each cell of the matrix pairs one model, one task, and one assigned library. The
 
 **Knowing this is worth something.** If you ignored the model and picked each category's most popular winner for everyone, you would pay a median of 1.25 times, and a mean of 1.54 times, more than choosing per model, in the cases where that default even works. In five model-and-category cases the popular default is not reliable for a given model while a per-model choice is. A per-model recommendation buys both lower cost and fewer outright failures.
 
-## Models have library preferences
+## Free-choice picks
 
-Sometimes a model told to use a particular library quietly declines and reaches for the standard library or a competitor instead. We count that as a miss against the assigned task, but read another way it is a preference, a sign of which libraries a model gravitates toward and which it resists. Measuring that directly, by letting each model choose freely, is the natural next step and the cleanest form of the library-selection question.
+Free-choice mode removes the constraint and asks the question from the other direction: with no candidate prescribed, which library does each model actually reach for? This is the cleanest reading of a model's library preference, because nothing in the prompt nudges it toward a name.
+
+The free pick lands on the model's measured-best library in 37.5 percent of cells, 42 of 112. Less than half the time, the library a model picks on its own is the one that serves it best in the constrained run.
+
+When the two come apart and both are priced, the gap is real but bounded. Across the 37 in-set cells where the free pick differs from the best, the cost ratio runs at a median of 1.22 times and a mean of 1.30, with a worst case at 2.07. Read plainly: the library a model reaches for on its own costs about 22 percent more than the library that serves it best. The default tax is visible without being catastrophic.
+
+The pattern underneath is convergence. Within a category, the free picks pile onto one or two libraries far more tightly than the constrained-best run does, where each model lands on its own answer. Every one of the sixteen models reaches for argparse on command-line parsing; typer, the most-downloaded candidate, draws zero picks. Templating splits ten to jinja2 and six to the standard library, with mako, the highest-downloaded option, absent. Validation lands ten on dataclasses and six on the standard library, and pydantic does not show up. Retries, where the task is to wrap a callable so it re-runs up to three times on failure, are where convergence and download rank coincide: tenacity is both the pile-up at fourteen of sixteen and the most-downloaded candidate. Across all 70 diff cells, the free pick coincides with the most-downloaded library only about a quarter of the time. The driver looks like ecosystem familiarity, the library a model has seen most often in well-formed code, rather than download rank. This is independent confirmation, from a different angle, of finding three.
+
+The convergence is not a stdlib reflex either. Across all free picks, 57 percent are community libraries and 43 percent are built-in, so the pile-up is a mix of the two depending on category.
+
+This is three runs per cell on one snapshot of model versions. The pile-ups, the agreement rate, and the size of the default tax are visible. Fine ordering between models that sit close together is not.
 
 ## What this does not claim
 
