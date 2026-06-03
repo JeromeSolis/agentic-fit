@@ -1,7 +1,7 @@
 # scripts/build_site_data.py
 """Aggregate cross-lab benchmark results into the JSON the showcase site renders.
 
-    python scripts/build_site_data.py --in results/crosslab_reps3_2026-05-25.jsonl --out site/data.json
+    python scripts/build_site_data.py --in results/crosslab_assigned_reps3_2026-05-25.jsonl --out site/data.json
 
 Reads one row per (model, library, category, rep) and collapses reps into a
 single cell: success_rate, median cost_usd, and rep count n. Median (not mean)
@@ -22,7 +22,7 @@ from pathlib import Path
 
 import yaml
 
-DEFAULT_IN = "results/crosslab_reps3_2026-05-25.jsonl"
+DEFAULT_IN = "results/crosslab_assigned_reps3_2026-05-25.jsonl"
 DEFAULT_OUT = "site/data.json"
 DEFAULT_TASKS = "tasks"
 
@@ -89,7 +89,7 @@ def load_task_meta(tasks_dir: Path, categories: list[str]) -> dict:
 
 def build(in_path: Path, out_path: Path, tasks_dir: Path = Path(DEFAULT_TASKS)) -> dict:
     rows = [json.loads(line) for line in in_path.read_text().splitlines() if line.strip()]
-    stem = in_path.stem  # e.g. crosslab_reps3_2026-05-25
+    stem = in_path.stem  # e.g. crosslab_assigned_reps3_2026-05-25
     snapshot = stem.split("_")[-1] if "_" in stem else ""
     agg = aggregate(rows)
     data = {"snapshot": snapshot, **agg,
