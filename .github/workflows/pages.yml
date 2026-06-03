@@ -41,6 +41,8 @@ jobs:
         run: pip install pyyaml
       - name: Regenerate data.json from the published dataset
         run: python scripts/build_site_data.py --out site/data.json
+        env:
+          PYTHONPATH: .
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
