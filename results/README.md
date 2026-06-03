@@ -2,19 +2,19 @@
 
 Raw agentic-fit runs, one JSON object per line. **Snapshot: 2026-05** for models
 `claude-sonnet-4-6` and `claude-haiku-4-5`. agentic-fit is model-specific and
-tied to training cutoffs — read this as a point-in-time snapshot, not a current
+tied to training cutoffs; read this as a point-in-time snapshot, not a current
 or universal ranking.
 
 ## Files
 
 | File | Experiment |
 |---|---|
-| `phase2_c1.jsonl` | C1 — assigned-library matrix, Sonnet |
-| `phase2_c1_haiku.jsonl` | C1 — assigned-library matrix, Haiku |
-| `c3_unconstrained_sonnet.jsonl` | C3 control arm — free choice, Sonnet |
-| `c3_unconstrained_haiku.jsonl` | C3 control arm — free choice, Haiku |
-| `c3_constrained_sonnet.jsonl` | C3 control arm — pick-from-candidates, Sonnet |
-| `c3_constrained_haiku.jsonl` | C3 control arm — pick-from-candidates, Haiku |
+| `phase2_c1.jsonl` | C1, assigned-library matrix, Sonnet |
+| `phase2_c1_haiku.jsonl` | C1, assigned-library matrix, Haiku |
+| `c3_unconstrained_sonnet.jsonl` | C3 control arm, free choice, Sonnet |
+| `c3_unconstrained_haiku.jsonl` | C3 control arm, free choice, Haiku |
+| `c3_constrained_sonnet.jsonl` | C3 control arm, pick-from-candidates, Sonnet |
+| `c3_constrained_haiku.jsonl` | C3 control arm, pick-from-candidates, Haiku |
 
 C2 (novelty) has no data file of its own: it is derived from the C1 runs above
 plus the PyPI download snapshot in `data/pypi_downloads.json`.
@@ -36,13 +36,26 @@ plus the PyPI download snapshot in `data/pypi_downloads.json`.
 | `category` | task category |
 | `version` | resolved library version (or `py3.12` for stdlib) |
 | `chosen_library` | in free-choice arms, what the agent actually imported |
+| `imports` | the top-level modules the agent's solution imported, captured by the harness |
+
+The harness also captures the agent's `solution_code` per run. That field is
+stripped from published files so the dataset stays a reproducibility log
+rather than a code corpus.
 
 ## Cross-lab dataset (May 2026)
 
-`crosslab_reps3_2026-05-25.jsonl` — the 8 task categories run across 16 models
-from nine vendors, reps=3, every model routed through OpenRouter so the
-measurement is identical. A snapshot of specific model versions; re-pin and
-re-run with `scripts/fetch_openrouter_models.py` as models ship.
+`crosslab_assigned_reps3_2026-05-25.jsonl` is the assigned-library cross-lab
+run: 7 task categories run across 16 models from nine vendors, reps=3, every
+model routed through OpenRouter so the measurement is identical. Collected
+2026-05-25. This file was previously published as `crosslab_reps3_2026-05-25.jsonl`;
+it was renamed to make the assigned/free split explicit and to align on the
+production 7-category set shared with the free-choice dataset below.
+
+`crosslab_free_reps3_2026-05-27.jsonl` is the free-choice companion: the same
+16 models and the same 7 categories, reps=3, collected 2026-05-27, with each
+model picking its own library per task. Use it alongside the assigned dataset
+to look at library-choice behavior and at how routing the choice changes
+success and cost.
 
 Additional row fields beyond the C1/C3 schema:
 
