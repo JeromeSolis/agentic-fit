@@ -18,11 +18,17 @@ import argparse
 import collections
 import json
 import statistics
+import sys
 from pathlib import Path
 
 import yaml
 
+from agentic_fit.loader import load_tasks
+from agentic_fit.scoring import crosslab_best, load_results, score_crosslab
+from agentic_fit.summary import _modal_pick
+
 DEFAULT_IN = "results/crosslab_assigned_reps3_2026-05-25.jsonl"
+DEFAULT_FREE_IN = "results/crosslab_free_reps3_2026-05-27.jsonl"
 DEFAULT_OUT = "site/data.json"
 DEFAULT_TASKS = "tasks"
 
@@ -87,13 +93,79 @@ def load_task_meta(tasks_dir: Path, categories: list[str]) -> dict:
     return meta
 
 
-def build(in_path: Path, out_path: Path, tasks_dir: Path = Path(DEFAULT_TASKS)) -> dict:
+def build_free_entries(constrained_path: Path, free_path: Path, tasks_dir: Path) -> list[dict]:
+    """One entry per (model, category) free-run cell.
+
+    Tax semantics:
+      - In-set pick: tax = constrained_median(pick) / constrained_median(best).
+        This is the same library tax the site already plots, so the free-arm
+        view stays comparable to the constrained-arm view.
+      - Off-menu pick (stdlib, compound, or any library outside the candidate
+        set): tax = free_median_cost / best_cost, with tax_is_soft=True.
+        Soft because we have no matched constrained baseline for that library,
+        so the comparison apples-to-pears across the candidate-set boundary.
+    """
+    constrained_results = load_results(constrained_path)
+    free_results = load_results(free_path)
+
+    tasks = load_tasks(tasks_dir)
+    candidate_libraries: dict[str, set[str]] = {}
+    for t in tasks:
+        candidate_libraries.setdefault(t.category, set()).update(t.candidate_libraries)
+
+    crosslab_scores = score_crosslab(constrained_results)
+    best_map = crosslab_best(crosslab_scores)
+    constrained_cost: dict[tuple[str, str, str], float] = {
+        (s.model, s.category, s.library): s.median_cost_usd for s in crosslab_scores
+    }
+
+    free_groups: dict[tuple[str, str], list] = collections.defaultdict(list)
+    for r in free_results:
+        free_groups[(r.model, r.category)].append(r)
+
+    entries: list[dict] = []
+    for (model, category), rs in sorted(free_groups.items()):
+        candidates = candidate_libraries.get(category, set())
+        pick = _modal_pick(rs, candidates)
+        best = best_map.get((model, category))
+        if best is None:
+            print(f"warning: no constrained best for ({model}, {category}); skipping",
+                  file=sys.stderr)
+            continue
+        free_costs = [r.cost_usd for r in rs if r.cost_usd is not None]
+        free_cost = statistics.median(free_costs) if free_costs else 0.0
+        pick_off_menu = pick not in candidates or (model, category, pick) not in constrained_cost
+        if pick_off_menu:
+            tax = free_cost / best.median_cost_usd if best.median_cost_usd else 0.0
+            tax_is_soft = True
+        else:
+            tax = constrained_cost[(model, category, pick)] / best.median_cost_usd if best.median_cost_usd else 0.0
+            tax_is_soft = False
+        entries.append({
+            "model": model,
+            "category": category,
+            "pick": pick,
+            "pick_off_menu": pick_off_menu,
+            "best_library": best.library,
+            "tax": tax,
+            "tax_is_soft": tax_is_soft,
+            "free_cost_usd": free_cost,
+            "best_cost_usd": best.median_cost_usd,
+            "n": len(rs),
+        })
+    return entries
+
+
+def build(in_path: Path, out_path: Path, tasks_dir: Path = Path(DEFAULT_TASKS),
+          free_path: Path | None = None) -> dict:
     rows = [json.loads(line) for line in in_path.read_text().splitlines() if line.strip()]
     stem = in_path.stem  # e.g. crosslab_assigned_reps3_2026-05-25
     snapshot = stem.split("_")[-1] if "_" in stem else ""
     agg = aggregate(rows)
     data = {"snapshot": snapshot, **agg,
             "tasks": load_task_meta(tasks_dir, agg["categories"])}
+    if free_path is not None:
+        data["free"] = build_free_entries(in_path, free_path, tasks_dir)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(data, indent=2) + "\n")
     return data
@@ -102,11 +174,16 @@ def build(in_path: Path, out_path: Path, tasks_dir: Path = Path(DEFAULT_TASKS)) 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--in", dest="in_path", default=DEFAULT_IN)
+    ap.add_argument("--free-in", dest="free_path", default=DEFAULT_FREE_IN)
     ap.add_argument("--out", dest="out_path", default=DEFAULT_OUT)
     ap.add_argument("--tasks", dest="tasks_dir", default=DEFAULT_TASKS)
     args = ap.parse_args()
-    data = build(Path(args.in_path), Path(args.out_path), Path(args.tasks_dir))
+    free_path = Path(args.free_path) if args.free_path else None
+    data = build(Path(args.in_path), Path(args.out_path), Path(args.tasks_dir),
+                 free_path=free_path)
+    free_n = len(data.get("free", []))
     print(f"wrote {args.out_path}: {len(data['cells'])} cells, "
+          f"{free_n} free entries, "
           f"{len(data['models'])} models, {len(data['categories'])} categories")
 
 
