@@ -39,7 +39,6 @@
           <button data-metric="cost" class="on">cost ($/task)</button>
           <button data-metric="success">success rate</button>
         </div>
-        <span class="metric-note" id="metric-note" hidden>cell = default tax</span>
         <button class="ctrl best-toggle on" id="best-toggle" aria-pressed="true" title="Assigned: rings each model's lowest-cost reliable library (highest success, then lowest cost). Free: rings each model's assigned-best library.">Best library per model</button>
       </div>
       <details class="model-filter">
@@ -51,6 +50,7 @@
         <div id="model-chips"></div>
       </details>
       <div class="heatmap-wrap"><div id="heatmap"></div></div>
+      <p class="heatmap-footer" id="metric-note" hidden>cell = default tax</p>
       <div class="legend" id="legend"></div>
       <div class="drilldown-wrap">
       <table class="drilldown" id="drilldown">
