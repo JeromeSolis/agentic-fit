@@ -310,7 +310,7 @@ function renderControls() {
         b.setAttribute("aria-pressed", String(on));
       });
       if (state.mode === "free") {
-        taxBtn.hidden = false;
+        taxBtn.disabled = false;
         taxBtn.classList.add("on");
         costBtn.classList.remove("on");
         successBtn.classList.remove("on");
@@ -318,7 +318,7 @@ function renderControls() {
         successBtn.disabled = true;
         state.sortKey = "model"; state.sortDir = 1;
       } else {
-        taxBtn.hidden = true;
+        taxBtn.disabled = true;
         taxBtn.classList.remove("on");
         costBtn.disabled = false;
         successBtn.disabled = false;
