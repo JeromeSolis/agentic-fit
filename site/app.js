@@ -288,14 +288,18 @@ function renderControls() {
   });
 
   $("#metric-toggle").addEventListener("click", (e) => {
-    if (state.mode === "free") return; // metric toggle is disabled in Free mode
-    const btn = e.target.closest("button"); if (!btn) return;
+    const btn = e.target.closest("button"); if (!btn || btn.disabled) return;
+    if (state.mode === "free") return; // tax is forced on in Free mode
     state.metric = btn.dataset.metric;
     state.sortKey = state.metric === "cost" ? "cost_usd" : "success_rate";
-    $$("#metric-toggle button")
+    $$("#metric-toggle button[data-metric='cost'], #metric-toggle button[data-metric='success']")
       .forEach((b) => b.classList.toggle("on", b === btn));
     renderHeatmap(); renderTable();
   });
+
+  const costBtn = $("#metric-toggle button[data-metric='cost']");
+  const successBtn = $("#metric-toggle button[data-metric='success']");
+  const taxBtn = $("#metric-toggle button[data-metric='tax']");
 
   $$("#mode-toggle button").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -305,15 +309,22 @@ function renderControls() {
         b.classList.toggle("on", on);
         b.setAttribute("aria-pressed", String(on));
       });
-      const metric = $("#metric-toggle");
-      const note = $("#metric-note");
       if (state.mode === "free") {
-        metric.classList.add("disabled");
-        note.hidden = false;
+        taxBtn.hidden = false;
+        taxBtn.classList.add("on");
+        costBtn.classList.remove("on");
+        successBtn.classList.remove("on");
+        costBtn.disabled = true;
+        successBtn.disabled = true;
         state.sortKey = "model"; state.sortDir = 1;
       } else {
-        metric.classList.remove("disabled");
-        note.hidden = true;
+        taxBtn.hidden = true;
+        taxBtn.classList.remove("on");
+        costBtn.disabled = false;
+        successBtn.disabled = false;
+        const activeBtn = state.metric === "success" ? successBtn : costBtn;
+        costBtn.classList.toggle("on", activeBtn === costBtn);
+        successBtn.classList.toggle("on", activeBtn === successBtn);
         state.sortKey = state.metric === "cost" ? "cost_usd" : "success_rate";
         state.sortDir = 1;
       }

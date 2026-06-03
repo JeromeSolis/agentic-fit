@@ -34,12 +34,14 @@
         <button data-mode="assigned" class="on" aria-pressed="true">Assigned</button>
         <button data-mode="free" aria-pressed="false">Free</button>
       </div>
+      <div class="bar-label">Metric</div>
       <div class="controls">
         <div class="ctrl metric-toggle" id="metric-toggle" role="group" aria-label="Metric">
           <button data-metric="cost" class="on">cost ($/task)</button>
           <button data-metric="success">success rate</button>
+          <button data-metric="tax" hidden>default tax</button>
         </div>
-        <button class="ctrl best-toggle on" id="best-toggle" aria-pressed="true" title="Assigned: rings each model's lowest-cost reliable library (highest success, then lowest cost). Free: rings each model's assigned-best library.">Best library per model</button>
+        <button class="ctrl best-toggle on" id="best-toggle" aria-pressed="true" title="Cost / success rate: rings each model's lowest-cost reliable library (highest success, then lowest cost). Default tax: rings each model's assigned-best library.">Best library per model</button>
       </div>
       <details class="model-filter">
         <summary>Models <span id="model-count"></span></summary>
@@ -50,7 +52,6 @@
         <div id="model-chips"></div>
       </details>
       <div class="heatmap-wrap"><div id="heatmap"></div></div>
-      <p class="heatmap-footer" id="metric-note" hidden>cell = default tax</p>
       <div class="legend" id="legend"></div>
       <div class="drilldown-wrap">
       <table class="drilldown" id="drilldown">
