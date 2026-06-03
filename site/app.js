@@ -260,7 +260,7 @@ function renderFreeTable() {
   const body = $("#drilldown tbody");
   body.innerHTML = rows.map((f) =>
     `<tr><td>${shortLabel(f.model)}</td>`
-    + `<td>${f.pick}</td>`
+    + `<td>${f.pick_off_menu ? `<em>${f.pick}</em>` : f.pick}</td>`
     + `<td class="num">${f.tax.toFixed(2)}×</td>`
     + `<td class="num">$${fmtCost(f.free_cost_usd)}</td>`
     + `<td class="num">$${fmtCost(f.best_cost_usd)}</td>`
