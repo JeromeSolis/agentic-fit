@@ -29,12 +29,19 @@
           <p class="task-libs" id="task-libs"></p>
         </details>
       </div>
+      <div class="bar-label">Mode</div>
+      <div class="ctrl mode-toggle" id="mode-toggle" role="group" aria-label="Mode">
+        <button data-mode="assigned" class="on" aria-pressed="true">Assigned</button>
+        <button data-mode="free" aria-pressed="false">Free</button>
+      </div>
+      <div class="bar-label">Metric</div>
       <div class="controls">
         <div class="ctrl metric-toggle" id="metric-toggle" role="group" aria-label="Metric">
           <button data-metric="cost" class="on">cost ($/task)</button>
           <button data-metric="success">success rate</button>
+          <button data-metric="tax" disabled>default tax</button>
         </div>
-        <button class="ctrl best-toggle on" id="best-toggle" aria-pressed="true" title="Ring each model's lowest-cost reliable library (highest success rate, then lowest median cost).">Best library per model</button>
+        <button class="ctrl best-toggle on" id="best-toggle" aria-pressed="true" title="Cost / success rate: rings each model's lowest-cost reliable library (highest success, then lowest cost). Default tax: rings each model's assigned-best library.">Best library per model</button>
       </div>
       <details class="model-filter">
         <summary>Models <span id="model-count"></span></summary>
@@ -69,6 +76,7 @@
         <li><b>The choice changes the bill.</b> Among libraries that all work, cost varies a median of 1.7 times, and up to 24 times at the extreme.</li>
         <li><b>Popularity does not tell you the answer.</b> Agreement between a library's PyPI download rank and its cost rank for the agent is 54 percent, barely above chance.</li>
         <li><b>The per-model signal is worth considering.</b> A single default for every model costs about 1.25 times more, and sometimes fails outright where a model-specific choice succeeds.</li>
+        <li><b>Models converge on a shared pick per category.</b> Free picks match the model's measured-best library 37.5 percent of the time, the default tax runs at a median 1.22 times, and download rank accounts for the pick only about a quarter of the time.</li>
       </ol>
       <p><a href="https://github.com/JeromeSolis/agentic-fit/blob/main/docs/FINDINGS.md">Full methodology and caveats →</a></p>
     </section>

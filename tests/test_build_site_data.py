@@ -89,3 +89,31 @@ def test_build_embeds_task_prompt_from_yaml(tmp_path):
     t = data["tasks"]["cli_parsing"]
     assert t["prompt"] == "Write a function parse(argv)."
     assert t["candidate_libraries"] == ["argparse", "click", "typer"]
+
+
+def test_build_emits_free_array_with_in_set_and_soft_picks(tmp_path):
+    # Uses the real published datasets so we exercise the full pipeline
+    # (modal-pick + crosslab_best + soft-tax flagging) end to end.
+    bsd = _load()
+    constrained = ROOT / "results" / "crosslab_assigned_reps3_2026-05-25.jsonl"
+    free = ROOT / "results" / "crosslab_free_reps3_2026-05-27.jsonl"
+    tasks = ROOT / "tasks"
+    out = tmp_path / "data.json"
+    data = bsd.build(constrained, out, tasks_dir=tasks, free_path=free)
+    assert "free" in data, "expected top-level free array"
+    assert len(data["free"]) == 16 * 7, "expected one entry per (model, category)"
+    entry = data["free"][0]
+    for key in ("model", "category", "pick", "pick_off_menu", "best_library",
+                "tax", "tax_is_soft", "free_cost_usd", "best_cost_usd", "n"):
+        assert key in entry, f"missing key {key}"
+    # At least one off-menu entry must be present (the v0.3.0 data has 33 off-menu cells).
+    assert any(e["pick_off_menu"] for e in data["free"]), "expected off-menu picks in free array"
+    # Off-menu entries must be flagged soft; in-set entries must not be.
+    for e in data["free"]:
+        if e["pick_off_menu"]:
+            assert e["tax_is_soft"] is True, f"off-menu entry not flagged soft: {e}"
+        else:
+            assert e["tax_is_soft"] is False, f"in-set entry flagged soft: {e}"
+    # Tax values are positive floats.
+    for e in data["free"]:
+        assert isinstance(e["tax"], (int, float)) and e["tax"] > 0

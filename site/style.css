@@ -66,7 +66,8 @@ select { font-family:var(--mono); font-size:12.5px; padding:4px 8px; background:
    reads against both the palest and darkest cells */
 .cell.best{box-shadow:inset 0 0 0 3px var(--best);font-weight:700}
 
-.legend { display:flex; align-items:center; gap:6px; margin-top:12px; font-family:var(--mono); font-size:11px; color:var(--muted); }
+.legend { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-top:12px; font-family:var(--mono); font-size:11px; color:var(--muted); }
+.legend-note { flex-basis:100%; margin:8px 0 0; font-size:10.5px; color:var(--muted); line-height:1.5; max-width:70ch; }
 .legend .sw { width:22px; height:11px; border-radius:2px; }
 .legend .sw.c1{background:var(--c1)}.legend .sw.c2{background:var(--c2)}.legend .sw.c3{background:var(--c3)}.legend .sw.c4{background:var(--c4)}.legend .sw.c5{background:var(--c5)}
 .legend-best { display:inline-flex; align-items:center; gap:6px; margin-left:18px; }
@@ -84,6 +85,30 @@ table.drilldown { width:100%; border-collapse:collapse; }
 .drilldown td { font-size:13px; padding:6px 8px; border-bottom:1px solid var(--rule); }
 .drilldown td.num, .drilldown td:nth-child(2) { font-family:var(--mono); }
 .drilldown td:first-child { font-weight:600; }
+
+/* Free mode: segmented toggle, disabled-metric state, caption, and
+   tax-bucket cell colors. Off-menu picks (stdlib, compounds, unpriced
+   libraries) appear as their own rows with the library name as the row
+   label, sitting below the candidate rows. */
+.mode-toggle button {
+  font-family:var(--mono); font-size:12px; padding:5px 11px;
+  border:1px solid var(--rule); background:#fffdf7; color:var(--muted);
+  cursor:pointer;
+}
+.mode-toggle button.on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+
+.metric-toggle button[disabled] { background:#b5ab8d; color:#fffdf7; border-color:#b5ab8d; cursor:not-allowed; }
+
+.cell.tax-1   { background:var(--c1); color:#173f60; font-weight:600; }
+.cell.tax-12  { background:var(--c2); color:#173f60; font-weight:600; }
+.cell.tax-15  { background:var(--c4); color:#fff;    font-weight:600; }
+.cell.tax-2p  { background:var(--c5); color:#fff;    font-weight:600; }
+.cell.best-ring { box-shadow:inset 0 0 0 3px var(--best); }
+
+.legend .sw.tax-1  { background:var(--c1); }
+.legend .sw.tax-12 { background:var(--c2); }
+.legend .sw.tax-15 { background:var(--c4); }
+.legend .sw.tax-2p { background:var(--c5); }
 
 .findings ol { padding-left:20px; }
 .findings li { margin:8px 0; max-width:70ch; }

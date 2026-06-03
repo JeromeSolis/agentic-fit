@@ -1,12 +1,23 @@
 // agentic-fit showcase explorer: no framework, no build.
 const state = { data: null, category: null, metric: "cost", activeModels: new Set(),
-                sortKey: "cost_usd", sortDir: 1, libFilter: null, showBest: true };
+                sortKey: "cost_usd", sortDir: 1, libFilter: null, showBest: true,
+                mode: "assigned", freeByCell: {} };
 
 const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
+const escHtml = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const shortLabel = (id) => id.includes("/") ? id.split("/")[1] : id;
 const fmtCost = (v) => (v >= 0.001 ? v.toFixed(3) : v.toFixed(4));
 const cellCost = (v) => fmtCost(v).replace(/^0/, ""); // ".004"
 const pct = (v) => Math.round(v * 100) + "%";
+
+// Free-mode tax buckets: ≤1.05× optimal, ≤1.25× low, ≤1.75× medium, else high.
+function taxBucket(tax) {
+  if (tax <= 1.05) return "tax-1";
+  if (tax <= 1.25) return "tax-12";
+  if (tax <= 1.75) return "tax-15";
+  return "tax-2p";
+}
 
 function cellsFor(category) {
   return state.data.cells.filter((c) => c.category === category);
@@ -43,6 +54,7 @@ function bucketClass(v, breaks) {
 }
 
 function renderHeatmap() {
+  if (state.mode === "free") { renderFreeHeatmap(); return; }
   const cat = state.category;
   const libs = state.data.libraries_by_category[cat];
   const models = state.data.models.filter((m) => state.activeModels.has(m));
@@ -76,6 +88,58 @@ function renderHeatmap() {
   renderLegend();
 }
 
+// Free mode: rows are the candidate libraries plus any off-menu picks the
+// free dataset surfaces for this category. Each model column lights one cell
+// (the modal pick), colored by default tax. The best-toggle ring re-targets
+// to the assigned-best library row.
+function renderFreeHeatmap() {
+  const cat = state.category;
+  const models = state.data.models.filter((m) => state.activeModels.has(m));
+  const candidateLibs = state.data.libraries_by_category[cat] || [];
+
+  const offMenu = [];
+  const seen = new Set(candidateLibs);
+  for (const m of models) {
+    const f = state.freeByCell[m + "|" + cat];
+    if (f && f.pick_off_menu && !seen.has(f.pick)) {
+      offMenu.push(f.pick); seen.add(f.pick);
+    }
+  }
+  const libs = candidateLibs.concat(offMenu);
+  const offMenuSet = new Set(offMenu);
+
+  const grid = $("#heatmap");
+  grid.style.gridTemplateColumns = `110px repeat(${models.length}, minmax(34px, 1fr))`;
+
+  let html = `<div class="ch lib-head">Library</div>` +
+    models.map((m) => `<div class="ch" title="${m}">${shortLabel(m)}</div>`).join("");
+  for (const lib of libs) {
+    const safeLib = escHtml(lib);
+    const label = offMenuSet.has(lib) ? `<em>${safeLib}</em>` : safeLib;
+    html += `<div class="rl">${label}</div>`;
+    for (const m of models) {
+      const f = state.freeByCell[m + "|" + cat];
+      const isBest = state.showBest && f && f.best_library === lib;
+      const isPick = f && f.pick === lib;
+      if (isPick) {
+        const cls = ["cell", taxBucket(f.tax)];
+        if (isBest) cls.push("best-ring");
+        const tip = `${shortLabel(m)} · ${lib}: ${f.tax.toFixed(2)}× default tax`;
+        html += `<div class="${cls.join(" ")}" data-lib="${lib}" title="${tip}">${f.tax.toFixed(2)}×</div>`;
+      } else if (isBest) {
+        html += `<div class="cell empty best-ring" title="${shortLabel(m)} · assigned-best: ${lib}">·</div>`;
+      } else {
+        html += `<div class="cell empty">·</div>`;
+      }
+    }
+  }
+  grid.innerHTML = html;
+  grid.querySelectorAll(".cell[data-lib]").forEach((el) =>
+    el.addEventListener("click", () => { state.libFilter = el.dataset.lib; renderTable();
+      $("#drilldown").scrollIntoView({ behavior: "smooth", block: "nearest" }); }));
+  renderLegend();
+}
+
 function renderTaskMeta() {
   const t = (state.data.tasks || {})[state.category];
   $("#task-summary").textContent = t ? t.summary : "";
@@ -85,6 +149,7 @@ function renderTaskMeta() {
 }
 
 function renderLegend() {
+  if (state.mode === "free") { renderFreeLegend(); return; }
   const lo = state.metric === "cost" ? "cheaper" : "lower";
   const hi = state.metric === "cost" ? "pricier" : "higher";
   let html = `<span>${lo}</span>` +
@@ -96,7 +161,24 @@ function renderLegend() {
   $("#legend").innerHTML = html;
 }
 
+function renderFreeLegend() {
+  const swatch = (cls, label) =>
+    `<span class="sw ${cls}"></span><span>${label}</span>`;
+  let html =
+    swatch("tax-1",  "≤1.05× optimal") +
+    swatch("tax-12", "≤1.25× low") +
+    swatch("tax-15", "≤1.75× medium") +
+    swatch("tax-2p", ">1.75× high");
+  if (state.showBest) {
+    html += `<span class="legend-best"><span class="sw best-sw"></span>assigned-best library for that model</span>`;
+  }
+  html += `<p class="legend-note">Tax for off-menu picks (compounds, stdlib, libraries outside the candidate set) uses the pick's free-run cost. The candidate rows use assigned-run costs on both sides.</p>`;
+  $("#legend").innerHTML = html;
+}
+
 function renderTable() {
+  if (state.mode === "free") { renderFreeTable(); return; }
+  setAssignedHead();
   const cat = state.category;
   let rows = cellsFor(cat).filter((c) => state.activeModels.has(c.model));
   if (state.libFilter) rows = rows.filter((c) => c.library === state.libFilter);
@@ -107,12 +189,88 @@ function renderTable() {
   });
   const body = $("#drilldown tbody");
   body.innerHTML = rows.map((c) =>
-    `<tr><td>${shortLabel(c.model)}</td><td>${c.library}</td>`
+    `<tr><td>${shortLabel(c.model)}</td><td>${escHtml(c.library)}</td>`
     + `<td class="num">${pct(c.success_rate)}</td>`
-    + `<td class="num">$${fmtCost(c.cost_usd)}</td>`
-    + `<td class="num">${c.n}</td></tr>`).join("");
-  document.querySelectorAll("#drilldown th.sortable").forEach((th) => {
+    + `<td class="num">$${fmtCost(c.cost_usd)}</td></tr>`).join("");
+  $$("#drilldown th.sortable").forEach((th) => {
     const active = th.dataset.sort === state.sortKey;
+    th.classList.toggle("active", active);
+    if (active) th.dataset.dir = state.sortDir;
+  });
+}
+
+const ASSIGNED_HEAD = `<tr>
+  <th class="sortable" data-sort="model">Model</th>
+  <th class="sortable" data-sort="library">Library</th>
+  <th class="sortable" data-sort="success_rate">Success</th>
+  <th class="sortable" data-sort="cost_usd">$/task</th>
+</tr>`;
+const FREE_HEAD = `<tr>
+  <th class="sortable" data-sort="model">Model</th>
+  <th class="sortable" data-sort="pick">Pick</th>
+  <th class="sortable" data-sort="tax">Tax ×</th>
+  <th class="sortable" data-sort="free_cost_usd">$ free</th>
+  <th class="sortable" data-sort="best_cost_usd">$ best</th>
+  <th data-sort="best_library">Best library</th>
+</tr>`;
+
+function setAssignedHead() {
+  const thead = $("#drilldown thead");
+  if (thead.dataset.mode !== "assigned") {
+    thead.innerHTML = ASSIGNED_HEAD;
+    thead.dataset.mode = "assigned";
+    wireSortHeaders();
+  }
+}
+
+function setFreeHead() {
+  const thead = $("#drilldown thead");
+  if (thead.dataset.mode !== "free") {
+    thead.innerHTML = FREE_HEAD;
+    thead.dataset.mode = "free";
+    wireSortHeaders();
+  }
+}
+
+function wireSortHeaders() {
+  $$("#drilldown th.sortable").forEach((th) =>
+    th.addEventListener("click", () => {
+      const key = th.dataset.sort;
+      state.sortDir = state.sortKey === key ? -state.sortDir : 1;
+      state.sortKey = key; renderTable();
+    }));
+}
+
+function renderFreeTable() {
+  setFreeHead();
+  const cat = state.category;
+  const models = state.data.models.filter((m) => state.activeModels.has(m));
+  let rows = [];
+  for (const m of models) {
+    const f = state.freeByCell[m + "|" + cat];
+    if (f) rows.push(f);
+  }
+  if (state.libFilter) rows = rows.filter((f) => f.pick === state.libFilter || f.best_library === state.libFilter);
+  const sortableKeys = new Set(["model", "pick", "tax", "free_cost_usd", "best_cost_usd"]);
+  const key = sortableKeys.has(state.sortKey) ? state.sortKey : "model";
+  rows.sort((a, b) => {
+    const x = a[key], y = b[key];
+    const cmp = typeof x === "number" ? x - y : String(x).localeCompare(String(y));
+    return cmp * state.sortDir;
+  });
+  const body = $("#drilldown tbody");
+  body.innerHTML = rows.map((f) => {
+    const pickHtml = escHtml(f.pick);
+    const pickCell = f.pick_off_menu ? `<em>${pickHtml}</em>` : pickHtml;
+    return `<tr><td>${shortLabel(f.model)}</td>`
+      + `<td>${pickCell}</td>`
+      + `<td class="num">${f.tax.toFixed(2)}×</td>`
+      + `<td class="num">$${fmtCost(f.free_cost_usd)}</td>`
+      + `<td class="num">$${fmtCost(f.best_cost_usd)}</td>`
+      + `<td>${escHtml(f.best_library)}</td></tr>`;
+  }).join("");
+  $$("#drilldown th.sortable").forEach((th) => {
+    const active = th.dataset.sort === key;
     th.classList.toggle("active", active);
     if (active) th.dataset.dir = state.sortDir;
   });
@@ -130,12 +288,49 @@ function renderControls() {
   });
 
   $("#metric-toggle").addEventListener("click", (e) => {
-    const btn = e.target.closest("button"); if (!btn) return;
+    const btn = e.target.closest("button"); if (!btn || btn.disabled) return;
+    if (state.mode === "free") return; // tax is forced on in Free mode
     state.metric = btn.dataset.metric;
     state.sortKey = state.metric === "cost" ? "cost_usd" : "success_rate";
-    document.querySelectorAll("#metric-toggle button")
+    $$("#metric-toggle button[data-metric='cost'], #metric-toggle button[data-metric='success']")
       .forEach((b) => b.classList.toggle("on", b === btn));
     renderHeatmap(); renderTable();
+  });
+
+  const costBtn = $("#metric-toggle button[data-metric='cost']");
+  const successBtn = $("#metric-toggle button[data-metric='success']");
+  const taxBtn = $("#metric-toggle button[data-metric='tax']");
+
+  $$("#mode-toggle button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.mode = btn.dataset.mode;
+      $$("#mode-toggle button").forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle("on", on);
+        b.setAttribute("aria-pressed", String(on));
+      });
+      if (state.mode === "free") {
+        taxBtn.disabled = false;
+        taxBtn.classList.add("on");
+        costBtn.classList.remove("on");
+        successBtn.classList.remove("on");
+        costBtn.disabled = true;
+        successBtn.disabled = true;
+        state.sortKey = "model"; state.sortDir = 1;
+      } else {
+        taxBtn.disabled = true;
+        taxBtn.classList.remove("on");
+        costBtn.disabled = false;
+        successBtn.disabled = false;
+        const activeBtn = state.metric === "success" ? successBtn : costBtn;
+        costBtn.classList.toggle("on", activeBtn === costBtn);
+        successBtn.classList.toggle("on", activeBtn === successBtn);
+        state.sortKey = state.metric === "cost" ? "cost_usd" : "success_rate";
+        state.sortDir = 1;
+      }
+      state.libFilter = null;
+      renderHeatmap(); renderTable();
+    });
   });
 
   $("#best-toggle").addEventListener("click", (e) => {
@@ -169,16 +364,16 @@ function renderControls() {
     state.activeModels.clear(); refreshModels();
   });
 
-  document.querySelectorAll("#drilldown th.sortable").forEach((th) =>
-    th.addEventListener("click", () => {
-      const key = th.dataset.sort;
-      state.sortDir = state.sortKey === key ? -state.sortDir : 1;
-      state.sortKey = key; renderTable();
-    }));
+  // Sort-header wiring lives in setAssignedHead/setFreeHead, since the
+  // thead innerHTML is swapped on mode change and old listeners would die.
 }
 
 async function init() {
   state.data = await fetch("data.json").then((r) => r.json());
+  state.freeByCell = {};
+  for (const e of (state.data.free || [])) {
+    state.freeByCell[e.model + "|" + e.category] = e;
+  }
   state.category = state.data.categories.includes("data_validation")
     ? "data_validation" : state.data.categories[0];
   state.data.models.forEach((m) => state.activeModels.add(m));
