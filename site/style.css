@@ -85,6 +85,26 @@ table.drilldown { width:100%; border-collapse:collapse; }
 .drilldown td.num, .drilldown td:nth-child(2) { font-family:var(--mono); }
 .drilldown td:first-child { font-weight:600; }
 
+/* Free-choice mode: segmented toggle, disabled-metric state, caption, and
+   tax-bucket cell colors. Soft modifier (dashed border) flags off-menu picks
+   whose tax mixes free-run and constrained costs. */
+.mode-toggle button {
+  font-family:var(--mono); font-size:12px; padding:5px 11px;
+  border:1px solid var(--rule); background:#fffdf7; color:var(--muted);
+  cursor:pointer;
+}
+.mode-toggle button.on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+
+.metric-toggle.disabled { opacity:0.35; pointer-events:none; }
+.metric-note { font-family:var(--mono); font-size:11px; color:var(--muted); margin-left:8px; align-self:center; }
+
+.cell.tax-1   { background:#2c5f8a; color:#fff; font-weight:600; }
+.cell.tax-12  { background:#5d7f5d; color:#fff; font-weight:600; }
+.cell.tax-15  { background:#a05a3a; color:#fff; font-weight:600; }
+.cell.tax-2p  { background:#c93b3b; color:#fff; font-weight:600; }
+.cell.tax-soft { border:1px dashed rgba(255,255,255,0.7); }
+.cell.best-ring { box-shadow:inset 0 0 0 3px var(--best); }
+
 .findings ol { padding-left:20px; }
 .findings li { margin:8px 0; max-width:70ch; }
 .findings li b { font-weight:600; }
