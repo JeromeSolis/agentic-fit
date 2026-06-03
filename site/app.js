@@ -8,6 +8,7 @@ const $$ = (sel) => document.querySelectorAll(sel);
 const escHtml = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const shortLabel = (id) => id.includes("/") ? id.split("/")[1] : id;
 const fmtCost = (v) => (v >= 0.001 ? v.toFixed(3) : v.toFixed(4));
+const fmtRetries = (v) => Number.isInteger(v) ? String(v) : v.toFixed(1);
 const cellCost = (v) => fmtCost(v).replace(/^0/, ""); // ".004"
 const pct = (v) => Math.round(v * 100) + "%";
 
@@ -189,10 +190,10 @@ function renderTable() {
   });
   const body = $("#drilldown tbody");
   body.innerHTML = rows.map((c) =>
-    `<tr><td>${shortLabel(c.model)}</td><td>${c.library}</td>`
+    `<tr><td>${shortLabel(c.model)}</td><td>${escHtml(c.library)}</td>`
     + `<td class="num">${pct(c.success_rate)}</td>`
     + `<td class="num">$${fmtCost(c.cost_usd)}</td>`
-    + `<td class="num">${c.n}</td></tr>`).join("");
+    + `<td class="num">${fmtRetries(c.retries)}</td></tr>`).join("");
   $$("#drilldown th.sortable").forEach((th) => {
     const active = th.dataset.sort === state.sortKey;
     th.classList.toggle("active", active);
@@ -205,7 +206,7 @@ const ASSIGNED_HEAD = `<tr>
   <th class="sortable" data-sort="library">Library</th>
   <th class="sortable" data-sort="success_rate">Success</th>
   <th class="sortable" data-sort="cost_usd">$/task</th>
-  <th class="sortable" data-sort="n" title="Repeated runs per cell. Success rate is passes divided by n; $/task is the median over these runs.">n</th>
+  <th class="sortable" data-sort="retries" title="Median retries across reps. 0 means the model solved the task on its first attempt every time.">Retries</th>
 </tr>`;
 const FREE_HEAD = `<tr>
   <th class="sortable" data-sort="model">Model</th>
@@ -214,7 +215,7 @@ const FREE_HEAD = `<tr>
   <th class="sortable" data-sort="free_cost_usd">$ free</th>
   <th class="sortable" data-sort="best_cost_usd">$ best</th>
   <th data-sort="best_library">Best library</th>
-  <th class="sortable" data-sort="n">n</th>
+  <th class="sortable" data-sort="retries" title="Median retries across reps. 0 means the model solved the task on its first attempt every time.">Retries</th>
 </tr>`;
 
 function setAssignedHead() {
@@ -254,7 +255,7 @@ function renderFreeTable() {
     if (f) rows.push(f);
   }
   if (state.libFilter) rows = rows.filter((f) => f.pick === state.libFilter || f.best_library === state.libFilter);
-  const sortableKeys = new Set(["model", "pick", "tax", "free_cost_usd", "best_cost_usd", "n"]);
+  const sortableKeys = new Set(["model", "pick", "tax", "free_cost_usd", "best_cost_usd", "retries"]);
   const key = sortableKeys.has(state.sortKey) ? state.sortKey : "model";
   rows.sort((a, b) => {
     const x = a[key], y = b[key];
@@ -271,7 +272,7 @@ function renderFreeTable() {
       + `<td class="num">$${fmtCost(f.free_cost_usd)}</td>`
       + `<td class="num">$${fmtCost(f.best_cost_usd)}</td>`
       + `<td>${escHtml(f.best_library)}</td>`
-      + `<td class="num">${f.n}</td></tr>`;
+      + `<td class="num">${fmtRetries(f.retries)}</td></tr>`;
   }).join("");
   $$("#drilldown th.sortable").forEach((th) => {
     const active = th.dataset.sort === key;

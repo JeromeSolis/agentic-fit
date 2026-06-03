@@ -14,9 +14,10 @@ def _load():
     return mod
 
 
-def _row(model, category, library, rep, success, cost):
+def _row(model, category, library, rep, success, cost, iterations=1):
     return {"model": model, "category": category, "library": library,
-            "rep": rep, "success": success, "cost_usd": cost, "status": "passed"}
+            "rep": rep, "success": success, "cost_usd": cost, "status": "passed",
+            "iterations": iterations}
 
 
 def test_aggregate_collapses_reps_into_one_cell():
@@ -104,7 +105,7 @@ def test_build_emits_free_array_with_in_set_and_soft_picks(tmp_path):
     assert len(data["free"]) == 16 * 7, "expected one entry per (model, category)"
     entry = data["free"][0]
     for key in ("model", "category", "pick", "pick_off_menu", "best_library",
-                "tax", "tax_is_soft", "free_cost_usd", "best_cost_usd", "n"):
+                "tax", "tax_is_soft", "free_cost_usd", "best_cost_usd", "retries", "n"):
         assert key in entry, f"missing key {key}"
     # At least one off-menu entry must be present (the v0.3.0 data has 33 off-menu cells).
     assert any(e["pick_off_menu"] for e in data["free"]), "expected off-menu picks in free array"
