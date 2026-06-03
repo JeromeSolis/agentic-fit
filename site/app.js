@@ -119,10 +119,8 @@ function renderFreeHeatmap() {
       const isPick = f && f.pick === lib;
       if (isPick) {
         const cls = ["cell", taxBucket(f.tax)];
-        if (f.tax_is_soft) cls.push("tax-soft");
         if (isBest) cls.push("best-ring");
-        const softNote = f.tax_is_soft ? " · soft (off-menu)" : "";
-        const tip = `${shortLabel(m)} · ${lib}: ${f.tax.toFixed(2)}× default tax${softNote}`;
+        const tip = `${shortLabel(m)} · ${lib}: ${f.tax.toFixed(2)}× default tax`;
         html += `<div class="${cls.join(" ")}" data-lib="${lib}" title="${tip}">${f.tax.toFixed(2)}×</div>`;
       } else if (isBest) {
         html += `<div class="cell empty best-ring" title="${shortLabel(m)} · assigned-best: ${lib}">·</div>`;
@@ -166,11 +164,11 @@ function renderFreeLegend() {
     swatch("tax-1",  "≤1.05× optimal") +
     swatch("tax-12", "≤1.25× low") +
     swatch("tax-15", "≤1.75× medium") +
-    swatch("tax-2p", ">1.75× high") +
-    `<span class="legend-soft" title="Off-menu picks: tax mixes free-run and assigned costs.">dashed = off-menu (soft)</span>`;
+    swatch("tax-2p", ">1.75× high");
   if (state.showBest) {
     html += `<span class="legend-best"><span class="sw best-sw"></span>assigned-best library for that model</span>`;
   }
+  html += `<p class="legend-note">Tax for off-menu picks (compounds, stdlib, libraries outside the candidate set) uses the pick's free-run cost. The candidate rows use assigned-run costs on both sides.</p>`;
   $("#legend").innerHTML = html;
 }
 
@@ -260,16 +258,14 @@ function renderFreeTable() {
     return cmp * state.sortDir;
   });
   const body = $("#drilldown tbody");
-  body.innerHTML = rows.map((f) => {
-    const soft = f.pick_off_menu ? ` <em style="color:var(--muted); margin-left:4px;">(soft)</em>` : "";
-    return `<tr><td>${shortLabel(f.model)}</td>`
-      + `<td>${f.pick}${soft}</td>`
-      + `<td class="num">${f.tax.toFixed(2)}×</td>`
-      + `<td class="num">$${fmtCost(f.free_cost_usd)}</td>`
-      + `<td class="num">$${fmtCost(f.best_cost_usd)}</td>`
-      + `<td>${f.best_library}</td>`
-      + `<td class="num">${f.n}</td></tr>`;
-  }).join("");
+  body.innerHTML = rows.map((f) =>
+    `<tr><td>${shortLabel(f.model)}</td>`
+    + `<td>${f.pick}</td>`
+    + `<td class="num">${f.tax.toFixed(2)}×</td>`
+    + `<td class="num">$${fmtCost(f.free_cost_usd)}</td>`
+    + `<td class="num">$${fmtCost(f.best_cost_usd)}</td>`
+    + `<td>${f.best_library}</td>`
+    + `<td class="num">${f.n}</td></tr>`).join("");
   $$("#drilldown th.sortable").forEach((th) => {
     const active = th.dataset.sort === key;
     th.classList.toggle("active", active);
