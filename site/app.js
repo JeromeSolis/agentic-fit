@@ -105,6 +105,7 @@ function renderFreeHeatmap() {
     }
   }
   const libs = candidateLibs.concat(offMenu);
+  const offMenuSet = new Set(offMenu);
 
   const grid = $("#heatmap");
   grid.style.gridTemplateColumns = `110px repeat(${models.length}, minmax(34px, 1fr))`;
@@ -112,7 +113,8 @@ function renderFreeHeatmap() {
   let html = `<div class="ch lib-head">Library</div>` +
     models.map((m) => `<div class="ch" title="${m}">${shortLabel(m)}</div>`).join("");
   for (const lib of libs) {
-    html += `<div class="rl">${lib}</div>`;
+    const label = offMenuSet.has(lib) ? `<em>${lib}</em>` : lib;
+    html += `<div class="rl">${label}</div>`;
     for (const m of models) {
       const f = state.freeByCell[m + "|" + cat];
       const isBest = state.showBest && f && f.best_library === lib;
