@@ -34,6 +34,8 @@ class RunResult:
     status: str = ""  # final SandboxResult.status: passed/failed/collection_error/timeout/import_not_used/...
     cost_usd: float | None = None  # tokens * unified OpenRouter list price (budget.run_cost)
     provider: str = ""             # "anthropic" | "openrouter"
+    imports: list[str] | None = None  # all top-level modules the final solution imported (raw capture)
+    solution_code: str = ""           # the final solution the agent wrote (captured, not published)
 
     @property
     def total_tokens(self) -> int:

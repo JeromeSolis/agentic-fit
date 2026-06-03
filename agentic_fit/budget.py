@@ -39,10 +39,11 @@ def estimate_matrix_cost(
 
 def estimate_crosslab_cost(
     tasks: list[Task], models: list[tuple[str, str]], reps: int,
-    avg_input: int = 1500, avg_output: int = 1200,
+    avg_input: int = 1500, avg_output: int = 1200, *, mode: str = "assigned",
 ) -> dict:
     """models: list of (model_id, provider). Returns per-model estimates + total."""
-    cells = sum(len(t.candidate_libraries) for t in tasks) * reps
+    cells_per = len(tasks) if mode == "free" else sum(len(t.candidate_libraries) for t in tasks)
+    cells = cells_per * reps
     per_model, total = [], 0.0
     for model_id, provider in models:
         cost = cells * run_cost(model_id, avg_input, avg_output)

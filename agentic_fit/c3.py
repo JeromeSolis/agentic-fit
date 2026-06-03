@@ -7,9 +7,20 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from .agent import AnthropicClient
-from .cli import _make_reporter, select_backend
+from .cli import select_backend
 from .loader import load_tasks
 from .runner import run_control_arm
+
+
+def _make_reporter(start: float):
+    def report(done, total, r, spent):
+        mark = "✓" if r.success else "✗"
+        outcome = "passed" if r.success else (r.error or "failed")
+        m, s = divmod(int(time.monotonic() - start), 60)
+        print(f"[{done:>3}/{total}] {r.category}/{r.library} rep={r.rep} "
+              f"{mark} {outcome[:24]} · {r.iterations} iter · {r.total_tokens:,} tok "
+              f"· ${spent:.2f} · {m}m{s:02d}s", flush=True)
+    return report
 
 
 def arm_mode_and_out(arm: str, model: str) -> tuple[str, str]:
