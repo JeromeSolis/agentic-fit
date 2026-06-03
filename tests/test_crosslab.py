@@ -82,3 +82,19 @@ def test_circuit_breaker_aborts_on_consecutive_errors(tmp_path, monkeypatch):
     assert res["aborted"] is True
     # stopped at the limit (TASK has 1 library, reps=10 -> 10 potential cells)
     assert len(rows) == crosslab.CONSECUTIVE_ERROR_LIMIT
+
+
+def test_free_mode_drops_library_sweep(tmp_path, monkeypatch):
+    _patch_clients(monkeypatch)
+    budget.register_prices([("m/a", 1.0, 0.0)])
+    # A task with THREE candidate libs: assigned mode would make 3*reps rows,
+    # free mode must make 1*reps (one run per task, no sweep).
+    task = Task("sample__add", "sample", "add", ("math", "statistics", "fractions"),
+                "solution.py", str(FIX / "test_solution.py"))
+    out = tmp_path / "free.jsonl"
+    res = crosslab.run_crosslab([("m/a", "openrouter")], [task], reps=2, out_path=out,
+                                backend=_OkBackend(), max_spend=999.0, mode="free")
+    rows = [RunResult.from_json(l) for l in out.read_text().splitlines() if l.strip()]
+    assert len(rows) == 2                       # 1 task * 2 reps, NOT * 3 libs
+    assert all(r.library == "" for r in rows)   # free mode assigns no library
+    assert res["aborted"] is False

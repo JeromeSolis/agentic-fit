@@ -64,3 +64,24 @@ def test_runresult_defaults_cost_and_provider():
     r = RunResult("t", "l", 0, "m", True, 1, 1, 1, 10, 5)
     assert r.cost_usd is None
     assert r.provider == ""
+
+
+def test_runresult_captures_imports_and_solution_code_roundtrip():
+    from agentic_fit.models import RunResult
+    r = RunResult("t", "", 0, "m", True, 1, 1, 1, input_tokens=0, output_tokens=0,
+                  imports=["pydantic", "os"], solution_code="import pydantic\n")
+    back = RunResult.from_json(r.to_json())
+    assert back.imports == ["pydantic", "os"]
+    assert back.solution_code == "import pydantic\n"
+    assert back.chosen_library is None
+
+
+def test_runresult_loads_legacy_rows_without_new_fields():
+    from agentic_fit.models import RunResult
+    legacy = ('{"task_id":"t","library":"","rep":0,"model":"m","success":true,'
+              '"tests_passed":1,"tests_total":1,"iterations":1,"input_tokens":0,'
+              '"output_tokens":0,"chosen_library":"pydantic"}')
+    r = RunResult.from_json(legacy)
+    assert r.imports is None
+    assert r.solution_code == ""
+    assert r.chosen_library == "pydantic"

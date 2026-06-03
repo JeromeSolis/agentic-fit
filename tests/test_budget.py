@@ -43,3 +43,14 @@ def test_estimate_crosslab_cost_totals():
     assert out["cells_per_model"] == 6
     assert out["total_usd"] == 18.0
     assert {m["model"] for m in out["per_model"]} == {"a/model", "b/model"}
+
+
+def test_estimate_crosslab_free_mode_one_cell_per_task():
+    from agentic_fit import budget
+    from agentic_fit.models import Task
+    budget.register_prices([("m/a", 1.0, 0.0)])
+    task = Task("c__t", "c", "p", ("a", "b", "c"), "solution.py", "x")
+    assigned = budget.estimate_crosslab_cost([task], [("m/a", "openrouter")], reps=2)
+    free = budget.estimate_crosslab_cost([task], [("m/a", "openrouter")], reps=2, mode="free")
+    assert assigned["cells_per_model"] == 6  # 3 candidate libs * 2 reps
+    assert free["cells_per_model"] == 2      # 1 task * 2 reps, no library sweep

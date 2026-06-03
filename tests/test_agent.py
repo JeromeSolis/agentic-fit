@@ -110,7 +110,7 @@ def test_run_agent_sets_enforce_import_from_stdlib_membership():
 FREE_REQ = "```python\nimport requests\n\ndef add(a, b):\n    return a + b\n```"
 
 
-def test_run_agent_unconstrained_detects_choice_and_builds_install_set():
+def test_run_agent_unconstrained_captures_imports_and_builds_install_set():
     jobs = []
 
     class _Cap:
@@ -124,7 +124,9 @@ def test_run_agent_unconstrained_detects_choice_and_builds_install_set():
     assert job.install_libraries == ["requests"]   # detected from the solution
     assert job.enforce_import is False              # no enforcement in free modes
     assert job.competing_libraries == []
-    assert r.chosen_library == "requests"
+    # Interpretation moved to agentic_fit.picks; run_agent no longer derives chosen_library.
+    assert r.chosen_library is None
+    assert r.imports == ["requests"]
 
 
 def test_run_agent_free_pure_stdlib_records_empty_install_set():
@@ -156,12 +158,14 @@ def _capturing():
     return jobs, _Cap()
 
 
-def test_run_agent_free_multi_import_joins_chosen():
+def test_run_agent_free_multi_import_captures_all_imports():
     jobs, backend = _capturing()
     r = run_agent(FakeLLMClient([LLMResponse(FREE_MULTI, 10, 5)]), TASK, "", "fake",
                   rep=0, mode="free_unconstrained", backend=backend)
     assert jobs[-1].install_libraries == ["arrow", "requests"]  # sorted by imported_modules
-    assert r.chosen_library == "arrow+requests"
+    # Interpretation moved to agentic_fit.picks; run_agent no longer derives chosen_library.
+    assert r.chosen_library is None
+    assert r.imports == ["arrow", "requests"]
 
 
 def test_free_mode_system_prompt_drops_single_library_constraint():
@@ -200,6 +204,47 @@ def test_run_agent_records_error_when_client_raises():
     assert r.success is False
     assert r.status == "error"
     assert "api exploded" in (r.error or "")
+
+
+def test_free_mode_captures_imports_and_code_not_chosen_library():
+    from agentic_fit.agent import run_agent, FakeLLMClient, LLMResponse
+    from agentic_fit.models import Task
+    from agentic_fit.sandbox import SandboxResult
+
+    class _OkBackend:
+        def run(self, job):
+            return SandboxResult(True, 1, 1, "", "", status="passed", version="x")
+
+    code = "```python\nimport requests\ndef f():\n    return requests\n```"
+    task = Task("http_client__x", "http_client", "p", ("requests", "httpx", "urllib3"),
+                "solution.py", str(FIX / "test_solution.py"))
+    r = run_agent(FakeLLMClient([LLMResponse(code, 5, 5)]), task, "", "m", 0,
+                  mode="free_unconstrained", backend=_OkBackend())
+    assert r.imports == ["requests"]
+    assert "import requests" in r.solution_code
+    assert r.chosen_library is None
+
+
+def test_free_mode_install_excludes_stdlib_backports():
+    from agentic_fit.agent import run_agent, FakeLLMClient, LLMResponse
+    from agentic_fit.models import Task
+    from agentic_fit.sandbox import SandboxResult
+
+    seen = {}
+
+    class _RecordingBackend:
+        def run(self, job):
+            seen["install"] = job.install_libraries
+            return SandboxResult(True, 1, 1, "", "", status="passed", version="x")
+
+    code = "```python\nfrom dataclasses import dataclass\ndef f():\n    return 1\n```"
+    task = Task("data_validation__x", "data_validation", "p",
+                ("pydantic", "marshmallow", "dataclasses"),
+                "solution.py", str(FIX / "test_solution.py"))
+    r = run_agent(FakeLLMClient([LLMResponse(code, 5, 5)]), task, "", "m", 0,
+                  mode="free_unconstrained", backend=_RecordingBackend())
+    assert "dataclasses" not in (seen["install"] or [])
+    assert r.imports == ["dataclasses"]
 
 
 def test_run_agent_records_provider_and_cost():
