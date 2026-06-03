@@ -71,7 +71,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.003027,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -80,7 +79,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.0038400000000000005,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -89,7 +87,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.001914,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -98,7 +95,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.0027375,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -107,7 +103,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.00013923,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -116,7 +111,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.00061161,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -125,7 +119,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.012236,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -134,7 +127,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.012489,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -143,7 +135,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.0001803,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -152,7 +143,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.00036950000000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -161,7 +151,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.00244041,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -170,7 +159,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.00043725000000000003,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -179,7 +167,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.005735,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -188,7 +175,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.0004225,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -197,7 +183,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.0025025000000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -206,7 +191,6 @@
       "library": "argparse",
       "success_rate": 1.0,
       "cost_usd": 0.00064274,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -215,7 +199,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.0034760000000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -224,7 +207,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.007905,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -233,7 +215,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.0026309999999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -242,7 +223,6 @@
       "library": "click",
       "success_rate": 0.0,
       "cost_usd": 0.043025,
-      "retries": 2,
       "n": 3
     },
     {
@@ -251,7 +231,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.00031361400000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -260,7 +239,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.0006216150000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -269,7 +247,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.098892,
-      "retries": 1,
       "n": 3
     },
     {
@@ -278,7 +255,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.06521400000000001,
-      "retries": 1,
       "n": 3
     },
     {
@@ -287,7 +263,6 @@
       "library": "click",
       "success_rate": 0.3333333333333333,
       "cost_usd": 0.0011151,
-      "retries": 2,
       "n": 3
     },
     {
@@ -296,7 +271,6 @@
       "library": "click",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.0012945,
-      "retries": 1,
       "n": 3
     },
     {
@@ -305,7 +279,6 @@
       "library": "click",
       "success_rate": 0.0,
       "cost_usd": 0.04328808000000001,
-      "retries": 2,
       "n": 3
     },
     {
@@ -314,7 +287,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.0014489999999999998,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -323,7 +295,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.01953,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -332,7 +303,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.0018810999999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -341,7 +311,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.01828,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -350,7 +319,6 @@
       "library": "click",
       "success_rate": 1.0,
       "cost_usd": 0.0071128400000000005,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -359,7 +327,6 @@
       "library": "typer",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.01097,
-      "retries": 2,
       "n": 3
     },
     {
@@ -368,7 +335,6 @@
       "library": "typer",
       "success_rate": 1.0,
       "cost_usd": 0.00706,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -377,7 +343,6 @@
       "library": "typer",
       "success_rate": 1.0,
       "cost_usd": 0.018213,
-      "retries": 1,
       "n": 3
     },
     {
@@ -386,7 +351,6 @@
       "library": "typer",
       "success_rate": 0.3333333333333333,
       "cost_usd": 0.0217025,
-      "retries": 2,
       "n": 3
     },
     {
@@ -395,7 +359,6 @@
       "library": "typer",
       "success_rate": 1.0,
       "cost_usd": 0.000243936,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -404,7 +367,6 @@
       "library": "typer",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.005217825,
-      "retries": 1,
       "n": 3
     },
     {
@@ -413,7 +375,6 @@
       "library": "typer",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.149066,
-      "retries": 2,
       "n": 3
     },
     {
@@ -422,7 +383,6 @@
       "library": "typer",
       "success_rate": 0.0,
       "cost_usd": 0.112023,
-      "retries": 2,
       "n": 3
     },
     {
@@ -431,7 +391,6 @@
       "library": "typer",
       "success_rate": 0.0,
       "cost_usd": 0.0015087,
-      "retries": 2,
       "n": 3
     },
     {
@@ -440,7 +399,6 @@
       "library": "typer",
       "success_rate": 0.3333333333333333,
       "cost_usd": 0.0032275,
-      "retries": 2,
       "n": 3
     },
     {
@@ -449,7 +407,6 @@
       "library": "typer",
       "success_rate": 0.3333333333333333,
       "cost_usd": 0.04329173000000001,
-      "retries": 2,
       "n": 3
     },
     {
@@ -458,7 +415,6 @@
       "library": "typer",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.00119325,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -467,7 +423,6 @@
       "library": "typer",
       "success_rate": 1.0,
       "cost_usd": 0.067115,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -476,7 +431,6 @@
       "library": "typer",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.0078143,
-      "retries": 1,
       "n": 3
     },
     {
@@ -485,7 +439,6 @@
       "library": "typer",
       "success_rate": 1.0,
       "cost_usd": 0.011645,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -494,7 +447,6 @@
       "library": "typer",
       "success_rate": 0.0,
       "cost_usd": 0.03836742,
-      "retries": 2,
       "n": 3
     },
     {
@@ -503,7 +455,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.002826,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -512,7 +463,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.0151425,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -521,7 +471,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.0065985,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -530,7 +479,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.0038525,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -539,7 +487,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.000364896,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -548,7 +495,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.00135459,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -557,7 +503,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.042073,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -566,7 +511,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.06683775,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -575,7 +519,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.0006082500000000001,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -584,7 +527,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.00056675,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -593,7 +535,6 @@
       "library": "dataclasses",
       "success_rate": 0.8333333333333334,
       "cost_usd": 0.027660165,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -602,7 +543,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.002103,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -611,7 +551,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.030115000000000003,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -620,7 +559,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.001271075,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -629,7 +567,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.00998625,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -638,7 +575,6 @@
       "library": "dataclasses",
       "success_rate": 1.0,
       "cost_usd": 0.0033954200000000006,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -647,7 +583,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.0027235,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -656,7 +591,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.0120675,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -665,7 +599,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.014976,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -674,7 +607,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.003475,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -683,7 +615,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.000798525,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -692,7 +623,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.001564695,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -701,7 +631,6 @@
       "library": "marshmallow",
       "success_rate": 0.8333333333333334,
       "cost_usd": 0.09268799999999999,
-      "retries": 1.5,
       "n": 6
     },
     {
@@ -710,7 +639,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.05214,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -719,7 +647,6 @@
       "library": "marshmallow",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.0007734,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -728,7 +655,6 @@
       "library": "marshmallow",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.00212,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -737,7 +663,6 @@
       "library": "marshmallow",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.028766735,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -746,7 +671,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.0028245,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -755,7 +679,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.029735,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -764,7 +687,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.00141895,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -773,7 +695,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.0160275,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -782,7 +703,6 @@
       "library": "marshmallow",
       "success_rate": 1.0,
       "cost_usd": 0.01043756,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -791,7 +711,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.0025310000000000003,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -800,7 +719,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.0124125,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -809,7 +727,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.0055709999999999996,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -818,7 +735,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.009562500000000002,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -827,7 +743,6 @@
       "library": "pydantic",
       "success_rate": 0.8333333333333334,
       "cost_usd": 0.000392301,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -836,7 +751,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.00122496,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -845,7 +759,6 @@
       "library": "pydantic",
       "success_rate": 0.8333333333333334,
       "cost_usd": 0.062098999999999994,
-      "retries": 0.5,
       "n": 6
     },
     {
@@ -854,7 +767,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.061082250000000005,
-      "retries": 1.0,
       "n": 6
     },
     {
@@ -863,7 +775,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.0021414,
-      "retries": 2.0,
       "n": 6
     },
     {
@@ -872,7 +783,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.0010885,
-      "retries": 0.5,
       "n": 6
     },
     {
@@ -881,7 +791,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.020731609999999998,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -890,7 +799,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.00167175,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -899,7 +807,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.024255,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -908,7 +815,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.000966225,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -917,7 +823,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.00973375,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -926,7 +831,6 @@
       "library": "pydantic",
       "success_rate": 1.0,
       "cost_usd": 0.00299544,
-      "retries": 0.0,
       "n": 6
     },
     {
@@ -935,7 +839,6 @@
       "library": "arrow",
       "success_rate": 0.0,
       "cost_usd": 0.013583999999999999,
-      "retries": 2,
       "n": 3
     },
     {
@@ -944,7 +847,6 @@
       "library": "arrow",
       "success_rate": 1.0,
       "cost_usd": 0.039444999999999994,
-      "retries": 1,
       "n": 3
     },
     {
@@ -953,7 +855,6 @@
       "library": "arrow",
       "success_rate": 1.0,
       "cost_usd": 0.013599,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -962,7 +863,6 @@
       "library": "arrow",
       "success_rate": 1.0,
       "cost_usd": 0.010995,
-      "retries": 1,
       "n": 3
     },
     {
@@ -971,7 +871,6 @@
       "library": "arrow",
       "success_rate": 0.3333333333333333,
       "cost_usd": 0.001188054,
-      "retries": 2,
       "n": 3
     },
     {
@@ -980,7 +879,6 @@
       "library": "arrow",
       "success_rate": 1.0,
       "cost_usd": 0.0036700950000000004,
-      "retries": 1,
       "n": 3
     },
     {
@@ -989,7 +887,6 @@
       "library": "arrow",
       "success_rate": 1.0,
       "cost_usd": 0.141716,
-      "retries": 2,
       "n": 3
     },
     {
@@ -998,7 +895,6 @@
       "library": "arrow",
       "success_rate": 0.0,
       "cost_usd": 0.1121265,
-      "retries": 2,
       "n": 3
     },
     {
@@ -1007,7 +903,6 @@
       "library": "arrow",
       "success_rate": 1.0,
       "cost_usd": 0.0003618,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1016,7 +911,6 @@
       "library": "arrow",
       "success_rate": 1.0,
       "cost_usd": 0.0017785000000000001,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1025,7 +919,6 @@
       "library": "arrow",
       "success_rate": 0.3333333333333333,
       "cost_usd": 0.04331655000000001,
-      "retries": 2,
       "n": 3
     },
     {
@@ -1034,7 +927,6 @@
       "library": "arrow",
       "success_rate": 1.0,
       "cost_usd": 0.00473175,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1043,7 +935,6 @@
       "library": "arrow",
       "success_rate": 1.0,
       "cost_usd": 0.17580500000000002,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1052,7 +943,6 @@
       "library": "arrow",
       "success_rate": 1.0,
       "cost_usd": 0.00220415,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1061,7 +951,6 @@
       "library": "arrow",
       "success_rate": 1.0,
       "cost_usd": 0.0250125,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1070,7 +959,6 @@
       "library": "arrow",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.005769679999999999,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1079,7 +967,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.003907,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1088,7 +975,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.02243,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1097,7 +983,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.018383999999999998,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1106,7 +991,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.0029725000000000003,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1115,7 +999,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.000620424,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1124,7 +1007,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.0023990250000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1133,7 +1015,6 @@
       "library": "datetime",
       "success_rate": 0.0,
       "cost_usd": 0.15193,
-      "retries": 2,
       "n": 3
     },
     {
@@ -1142,7 +1023,6 @@
       "library": "datetime",
       "success_rate": 0.0,
       "cost_usd": 0.114018,
-      "retries": 2,
       "n": 3
     },
     {
@@ -1151,7 +1031,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.0004986,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1160,7 +1039,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.0013575,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1169,7 +1047,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.04329677,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1178,7 +1055,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.0020985,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1187,7 +1063,6 @@
       "library": "datetime",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.17652,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1196,7 +1071,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.0023543,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1205,7 +1079,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.0142725,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1214,7 +1087,6 @@
       "library": "datetime",
       "success_rate": 1.0,
       "cost_usd": 0.01164394,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1223,7 +1095,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.0064069999999999995,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1232,7 +1103,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.00436,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1241,7 +1111,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.004557,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1250,7 +1119,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.003395,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1259,7 +1127,6 @@
       "library": "dateutil",
       "success_rate": 0.3333333333333333,
       "cost_usd": 0.0017477460000000001,
-      "retries": 2,
       "n": 3
     },
     {
@@ -1268,7 +1135,6 @@
       "library": "dateutil",
       "success_rate": 0.3333333333333333,
       "cost_usd": 0.0031724550000000002,
-      "retries": 2,
       "n": 3
     },
     {
@@ -1277,7 +1143,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.016466,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1286,7 +1151,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.06617550000000001,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1295,7 +1159,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.0003351,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1304,7 +1167,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.0017345000000000001,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1313,7 +1175,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.020194890000000004,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1322,7 +1183,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.003156,
-      "retries": 2,
       "n": 3
     },
     {
@@ -1331,7 +1191,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.0722,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1340,7 +1199,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.00231205,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1349,7 +1207,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.0093625,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1358,7 +1215,6 @@
       "library": "dateutil",
       "success_rate": 1.0,
       "cost_usd": 0.008477,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1367,7 +1223,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.0012129999999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1376,7 +1231,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.0040750000000000005,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1385,7 +1239,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.003297,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1394,7 +1247,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.0036225,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1403,7 +1255,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.000186858,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1412,7 +1263,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.00037236,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1421,7 +1271,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.0107,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1430,7 +1279,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.00987,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1439,7 +1287,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.0001851,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1448,7 +1295,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.0004945,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1457,7 +1303,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.0035212599999999996,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1466,7 +1311,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.000717,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1475,7 +1319,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.00889,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1484,7 +1327,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.000338,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1493,7 +1335,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.00307,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1502,7 +1343,6 @@
       "library": "httpx",
       "success_rate": 1.0,
       "cost_usd": 0.00094822,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1511,7 +1351,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.001132,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1520,7 +1359,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.003745,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1529,7 +1367,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.001974,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1538,7 +1375,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.0030399999999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1547,7 +1383,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.00013935599999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1556,7 +1391,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.000442395,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1565,7 +1399,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.010193999999999998,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1574,7 +1407,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.0102375,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1583,7 +1415,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.000186,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1592,7 +1423,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.00036999999999999994,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1601,7 +1431,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.00345073,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1610,7 +1439,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.00072525,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1619,7 +1447,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.005975,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1628,7 +1455,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.0006168500000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1637,7 +1463,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.002955,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1646,7 +1471,6 @@
       "library": "requests",
       "success_rate": 1.0,
       "cost_usd": 0.00088256,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1655,7 +1479,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.001338,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1664,7 +1487,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.004855,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1673,7 +1495,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.003597,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1682,7 +1503,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.003935,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1691,7 +1511,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.000188244,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1700,7 +1519,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.00046240500000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1709,7 +1527,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.013498,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1718,7 +1535,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.015406499999999998,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1727,7 +1543,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.0002016,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1736,7 +1551,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.0005775,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1745,7 +1559,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.005192970000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1754,7 +1567,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.0009105,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1763,7 +1575,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.015519999999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1772,7 +1583,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.00056615,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1781,7 +1591,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.003005,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1790,7 +1599,6 @@
       "library": "urllib3",
       "success_rate": 1.0,
       "cost_usd": 0.00086604,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1799,7 +1607,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.016205999999999998,
-      "retries": 2,
       "n": 3
     },
     {
@@ -1808,7 +1615,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.0034100000000000003,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1817,7 +1623,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.00174,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1826,7 +1631,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.0035825,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1835,7 +1639,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.000117306,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1844,7 +1647,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.0025282200000000003,
-      "retries": 1,
       "n": 3
     },
     {
@@ -1853,7 +1655,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.02247,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1862,7 +1663,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.0218835,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1871,7 +1671,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.0002862,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1880,7 +1679,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.0003795,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1889,7 +1687,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.0061545,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1898,7 +1695,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.000384,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1907,7 +1703,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.01345,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1916,7 +1711,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.00026195,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1925,7 +1719,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.0073375,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1934,7 +1727,6 @@
       "library": "backoff",
       "success_rate": 1.0,
       "cost_usd": 0.0033912199999999995,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1943,7 +1735,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.001094,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1952,7 +1743,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.003535,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1961,7 +1751,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.0036300000000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1970,7 +1759,6 @@
       "library": "stamina",
       "success_rate": 0.0,
       "cost_usd": 0.013312500000000001,
-      "retries": 2,
       "n": 3
     },
     {
@@ -1979,7 +1767,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.000150192,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1988,7 +1775,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.00070818,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -1997,7 +1783,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.026285999999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2006,7 +1791,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.0197235,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2015,7 +1799,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.0003645,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2024,7 +1807,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.0003045,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2033,7 +1815,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.020205920000000002,
-      "retries": 1,
       "n": 3
     },
     {
@@ -2042,7 +1823,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.0005549999999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2051,7 +1831,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.029109999999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2060,7 +1839,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.0003887,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2069,7 +1847,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.0080875,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2078,7 +1855,6 @@
       "library": "stamina",
       "success_rate": 1.0,
       "cost_usd": 0.00191898,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2087,7 +1863,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.001094,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2096,7 +1871,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.004315,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2105,7 +1879,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.00201,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2114,7 +1887,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.002285,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2123,7 +1895,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 9.840599999999999e-05,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2132,7 +1903,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.00018182999999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2141,7 +1911,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.021558,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2150,7 +1919,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.018121500000000002,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2159,7 +1927,6 @@
       "library": "tenacity",
       "success_rate": 0.0,
       "cost_usd": 0.0015396,
-      "retries": 2,
       "n": 3
     },
     {
@@ -2168,7 +1935,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.000372,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2177,7 +1943,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.012722680000000002,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2186,7 +1951,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.000663,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2195,7 +1959,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.012580000000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2204,7 +1967,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.0011544,
-      "retries": 1,
       "n": 3
     },
     {
@@ -2213,7 +1975,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.0067975,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2222,7 +1983,6 @@
       "library": "tenacity",
       "success_rate": 1.0,
       "cost_usd": 0.00204834,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2231,7 +1991,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.0018920000000000002,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2240,7 +1999,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.00324,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2249,7 +2007,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.0047940000000000005,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2258,7 +2015,6 @@
       "library": "chevron",
       "success_rate": 0.3333333333333333,
       "cost_usd": 0.0135625,
-      "retries": 2,
       "n": 3
     },
     {
@@ -2267,7 +2023,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.000128898,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2276,7 +2031,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.0012454049999999998,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2285,7 +2039,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.025359999999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2294,7 +2047,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.029169,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2303,7 +2055,6 @@
       "library": "chevron",
       "success_rate": 0.0,
       "cost_usd": 0.0010701,
-      "retries": 2,
       "n": 3
     },
     {
@@ -2312,7 +2063,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.0003625,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2321,7 +2071,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.00901646,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2330,7 +2079,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.0007575000000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2339,7 +2087,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.013269999999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2348,7 +2095,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.00032565000000000003,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2357,7 +2103,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.050225,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2366,7 +2111,6 @@
       "library": "chevron",
       "success_rate": 1.0,
       "cost_usd": 0.013474439999999999,
-      "retries": 1,
       "n": 3
     },
     {
@@ -2375,7 +2119,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.0011380000000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2384,7 +2127,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.004045,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2393,7 +2135,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.001497,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2402,7 +2143,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.0022575,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2411,7 +2151,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.00026523000000000003,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2420,7 +2159,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.0024333899999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2429,7 +2167,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.015016,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2438,7 +2175,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.021711,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2447,7 +2183,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.0002502,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2456,7 +2191,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.00047250000000000005,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2465,7 +2199,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.00338782,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2474,7 +2207,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.0007897499999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2483,7 +2215,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.008924999999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2492,7 +2223,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.00040755,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2501,7 +2231,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.011962500000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2510,7 +2239,6 @@
       "library": "jinja2",
       "success_rate": 1.0,
       "cost_usd": 0.00067732,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2519,7 +2247,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.001042,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2528,7 +2255,6 @@
       "library": "mako",
       "success_rate": 0.3333333333333333,
       "cost_usd": 0.031799999999999995,
-      "retries": 2,
       "n": 3
     },
     {
@@ -2537,7 +2263,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.007164,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2546,7 +2271,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.0018949999999999998,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2555,7 +2279,6 @@
       "library": "mako",
       "success_rate": 0.3333333333333333,
       "cost_usd": 0.00097335,
-      "retries": 2,
       "n": 3
     },
     {
@@ -2564,7 +2287,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.001674315,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2573,7 +2295,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.049202,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2582,7 +2303,6 @@
       "library": "mako",
       "success_rate": 0.6666666666666666,
       "cost_usd": 0.106665,
-      "retries": 2,
       "n": 3
     },
     {
@@ -2591,7 +2311,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.0002526,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2600,7 +2319,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.0002785,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2609,7 +2327,6 @@
       "library": "mako",
       "success_rate": 0.0,
       "cost_usd": 0.04329684,
-      "retries": 2,
       "n": 3
     },
     {
@@ -2618,7 +2335,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.00119025,
-      "retries": 1,
       "n": 3
     },
     {
@@ -2627,7 +2343,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.094265,
-      "retries": 1,
       "n": 3
     },
     {
@@ -2636,7 +2351,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.00030940000000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2645,7 +2359,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.01406,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2654,7 +2367,6 @@
       "library": "mako",
       "success_rate": 1.0,
       "cost_usd": 0.0005531399999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2663,7 +2375,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.001442,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2672,7 +2383,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.004229999999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2681,7 +2391,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.002919,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2690,7 +2399,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.002505,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2699,7 +2407,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.000411642,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2708,7 +2415,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.0007286249999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2717,7 +2423,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.017904,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2726,7 +2431,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.029817,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2735,7 +2439,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.0003318,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2744,7 +2447,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.000466,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2753,7 +2455,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.00883409,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2762,7 +2463,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.00081975,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2771,7 +2471,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.024665000000000003,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2780,7 +2479,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.0006350500000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2789,7 +2487,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.008462500000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2798,7 +2495,6 @@
       "library": "omegaconf",
       "success_rate": 1.0,
       "cost_usd": 0.00161616,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2807,7 +2503,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.002241,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2816,7 +2511,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.00975,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2825,7 +2519,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.003936,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2834,7 +2527,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.00348,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2843,7 +2535,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.000259182,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2852,7 +2543,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.001187985,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2861,7 +2551,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.033382,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2870,7 +2559,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.091083,
-      "retries": 2,
       "n": 3
     },
     {
@@ -2879,7 +2567,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.000414,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2888,7 +2575,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.0007695000000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2897,7 +2583,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.013610440000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2906,7 +2591,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.0012952500000000002,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2915,7 +2599,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.027175,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2924,7 +2607,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.0008268,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2933,7 +2615,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.0087025,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2942,7 +2623,6 @@
       "library": "ruamel",
       "success_rate": 1.0,
       "cost_usd": 0.004018560000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2951,7 +2631,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.002209,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2960,7 +2639,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.006045,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2969,7 +2647,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.004875000000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2978,7 +2655,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.0035975,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2987,7 +2663,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.00018585,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -2996,7 +2671,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.000934815,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3005,7 +2679,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.021043999999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3014,7 +2687,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.02958,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3023,7 +2695,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.0003741,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3032,7 +2703,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.0006745,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3041,7 +2711,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.00604688,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3050,7 +2719,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.001101,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3059,7 +2727,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.020929999999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3068,7 +2735,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.0007449,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3077,7 +2743,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.00594,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3086,7 +2751,6 @@
       "library": "yaml",
       "success_rate": 1.0,
       "cost_usd": 0.0017599400000000002,
-      "retries": 0.0,
       "n": 3
     }
   ],
@@ -3166,7 +2830,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.002398,
       "best_cost_usd": 0.003027,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3179,7 +2842,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.005476,
       "best_cost_usd": 0.0025310000000000003,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3192,7 +2854,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.006684,
       "best_cost_usd": 0.003907,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3205,7 +2866,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0011589999999999999,
       "best_cost_usd": 0.001132,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3218,7 +2878,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.004685,
       "best_cost_usd": 0.001094,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3231,7 +2890,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0028330000000000004,
       "best_cost_usd": 0.001042,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3244,7 +2902,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.002786,
       "best_cost_usd": 0.001442,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3257,7 +2914,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00378,
       "best_cost_usd": 0.0038400000000000005,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3270,7 +2926,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.008280000000000001,
       "best_cost_usd": 0.0120675,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3283,7 +2938,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.016045,
       "best_cost_usd": 0.00436,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3296,7 +2950,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.015265,
       "best_cost_usd": 0.003745,
-      "retries": 1,
       "n": 3
     },
     {
@@ -3309,7 +2962,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.003925,
       "best_cost_usd": 0.0034100000000000003,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3322,7 +2974,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00348,
       "best_cost_usd": 0.00324,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3335,7 +2986,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.005885,
       "best_cost_usd": 0.004229999999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3348,7 +2998,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0018570000000000001,
       "best_cost_usd": 0.001914,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3361,7 +3010,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.004431,
       "best_cost_usd": 0.0055709999999999996,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3374,7 +3022,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.010140000000000001,
       "best_cost_usd": 0.004557,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3387,7 +3034,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.002805,
       "best_cost_usd": 0.001974,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3400,7 +3046,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.005202,
       "best_cost_usd": 0.00174,
-      "retries": 1,
       "n": 3
     },
     {
@@ -3413,7 +3058,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0014219999999999999,
       "best_cost_usd": 0.001497,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3426,7 +3070,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.002496,
       "best_cost_usd": 0.002919,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3439,7 +3082,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0029999999999999996,
       "best_cost_usd": 0.0027375,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3452,7 +3094,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0034824999999999995,
       "best_cost_usd": 0.003475,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3465,7 +3106,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0033974999999999995,
       "best_cost_usd": 0.0029725000000000003,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3478,7 +3118,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0033550000000000003,
       "best_cost_usd": 0.0030399999999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3491,7 +3130,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0022775,
       "best_cost_usd": 0.002285,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3504,7 +3142,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.0023075,
       "best_cost_usd": 0.0018949999999999998,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3517,7 +3154,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0034125,
       "best_cost_usd": 0.002505,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3530,7 +3166,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.000160902,
       "best_cost_usd": 0.00013923,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3543,7 +3178,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00038556,
       "best_cost_usd": 0.000364896,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3556,7 +3190,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.0005312159999999999,
       "best_cost_usd": 0.000620424,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3569,7 +3202,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00015296399999999998,
       "best_cost_usd": 0.00013935599999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3582,7 +3214,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00022213800000000003,
       "best_cost_usd": 9.840599999999999e-05,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3595,7 +3226,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.000145278,
       "best_cost_usd": 0.000128898,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3608,7 +3238,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.000163296,
       "best_cost_usd": 0.00018585,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3621,7 +3250,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0006777300000000001,
       "best_cost_usd": 0.00061161,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3634,7 +3262,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.0014189699999999999,
       "best_cost_usd": 0.00122496,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3647,7 +3274,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.001863105,
       "best_cost_usd": 0.0023990250000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3660,7 +3286,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00041411999999999997,
       "best_cost_usd": 0.00037236,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3673,7 +3298,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0009561299999999999,
       "best_cost_usd": 0.00018182999999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3686,7 +3310,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.006128715,
       "best_cost_usd": 0.0012454049999999998,
-      "retries": 1,
       "n": 3
     },
     {
@@ -3699,7 +3322,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0007381950000000001,
       "best_cost_usd": 0.0007286249999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3712,7 +3334,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.015322,
       "best_cost_usd": 0.012236,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3725,7 +3346,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.039292,
       "best_cost_usd": 0.042073,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3738,7 +3358,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.06633399999999999,
       "best_cost_usd": 0.016466,
-      "retries": 1,
       "n": 3
     },
     {
@@ -3751,7 +3370,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.028762000000000003,
       "best_cost_usd": 0.010193999999999998,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3764,7 +3382,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.024176,
       "best_cost_usd": 0.021558,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3777,7 +3394,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.020908,
       "best_cost_usd": 0.015016,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3790,7 +3406,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.028224,
       "best_cost_usd": 0.017904,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3803,7 +3418,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.017215499999999998,
       "best_cost_usd": 0.012489,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3816,7 +3430,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.094503,
       "best_cost_usd": 0.05214,
-      "retries": 2,
       "n": 3
     },
     {
@@ -3829,7 +3442,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.065877,
       "best_cost_usd": 0.06617550000000001,
-      "retries": 1,
       "n": 3
     },
     {
@@ -3842,7 +3454,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0278535,
       "best_cost_usd": 0.00987,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3855,7 +3466,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.026187000000000002,
       "best_cost_usd": 0.018121500000000002,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3868,7 +3478,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.024492,
       "best_cost_usd": 0.021711,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3881,7 +3490,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.033705,
       "best_cost_usd": 0.02958,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3894,7 +3502,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00015780000000000001,
       "best_cost_usd": 0.0001803,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3907,7 +3514,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.0005145000000000001,
       "best_cost_usd": 0.0006082500000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3920,7 +3526,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0004998,
       "best_cost_usd": 0.0003351,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3933,7 +3538,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0001743,
       "best_cost_usd": 0.0001851,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3946,7 +3550,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.0016278,
       "best_cost_usd": 0.0002862,
-      "retries": 2,
       "n": 3
     },
     {
@@ -3959,7 +3562,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.0002292,
       "best_cost_usd": 0.0002502,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3972,7 +3574,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0003699,
       "best_cost_usd": 0.0003318,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3985,7 +3586,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0004925000000000001,
       "best_cost_usd": 0.00036950000000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -3998,7 +3598,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.000862,
       "best_cost_usd": 0.00056675,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4011,7 +3610,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.0006709999999999999,
       "best_cost_usd": 0.0013575,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4024,7 +3622,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.000529,
       "best_cost_usd": 0.00036999999999999994,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4037,7 +3634,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0007019999999999999,
       "best_cost_usd": 0.0003045,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4050,7 +3646,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.000361,
       "best_cost_usd": 0.0002785,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4063,7 +3658,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0007590000000000001,
       "best_cost_usd": 0.000466,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4076,7 +3670,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.006469260000000001,
       "best_cost_usd": 0.00244041,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4089,7 +3682,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.013925930000000001,
       "best_cost_usd": 0.020731609999999998,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4102,7 +3694,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.00818187,
       "best_cost_usd": 0.020194890000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4115,7 +3706,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.007818839999999999,
       "best_cost_usd": 0.00345073,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4128,7 +3718,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.018578510000000003,
       "best_cost_usd": 0.0061545,
-      "retries": 1,
       "n": 3
     },
     {
@@ -4141,7 +3730,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.017812170000000002,
       "best_cost_usd": 0.00338782,
-      "retries": 1,
       "n": 3
     },
     {
@@ -4154,7 +3742,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.007794000000000001,
       "best_cost_usd": 0.00604688,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4167,7 +3754,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00044775,
       "best_cost_usd": 0.00043725000000000003,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4180,7 +3766,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00161625,
       "best_cost_usd": 0.00167175,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4193,7 +3778,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00378375,
       "best_cost_usd": 0.0020985,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4206,7 +3790,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.001119,
       "best_cost_usd": 0.000717,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4219,7 +3802,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00066,
       "best_cost_usd": 0.000384,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4232,7 +3814,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00040800000000000005,
       "best_cost_usd": 0.0007575000000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4245,7 +3826,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0014272500000000001,
       "best_cost_usd": 0.00081975,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4258,7 +3838,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0055650000000000005,
       "best_cost_usd": 0.005735,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4271,7 +3850,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.023465,
       "best_cost_usd": 0.024255,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4284,7 +3862,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.173265,
       "best_cost_usd": 0.0722,
-      "retries": 1,
       "n": 3
     },
     {
@@ -4297,7 +3874,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.02027,
       "best_cost_usd": 0.005975,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4310,7 +3886,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.03560000000000001,
       "best_cost_usd": 0.012580000000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4323,7 +3898,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.018619999999999998,
       "best_cost_usd": 0.008924999999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4336,7 +3910,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.038465,
       "best_cost_usd": 0.020929999999999997,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4349,7 +3922,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0005486,
       "best_cost_usd": 0.0004225,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4362,7 +3934,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.00124865,
       "best_cost_usd": 0.000966225,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4375,7 +3946,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.0026240499999999997,
       "best_cost_usd": 0.00220415,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4388,7 +3958,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0006916,
       "best_cost_usd": 0.000338,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4401,7 +3970,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.00036855000000000004,
       "best_cost_usd": 0.00026195,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4414,7 +3982,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.0006175000000000001,
       "best_cost_usd": 0.00030940000000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4427,7 +3994,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0009984,
       "best_cost_usd": 0.0006350500000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4440,7 +4006,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00302,
       "best_cost_usd": 0.0025025000000000004,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4453,7 +4018,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0064725,
       "best_cost_usd": 0.00973375,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4466,7 +4030,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.011620000000000002,
       "best_cost_usd": 0.0093625,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4479,7 +4042,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0032874999999999996,
       "best_cost_usd": 0.002955,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4492,7 +4054,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00523,
       "best_cost_usd": 0.0067975,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4505,7 +4066,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0075575,
       "best_cost_usd": 0.011962500000000001,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4518,7 +4078,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00328,
       "best_cost_usd": 0.00594,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4531,7 +4090,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0016601200000000002,
       "best_cost_usd": 0.00064274,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4544,7 +4102,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0028861,
       "best_cost_usd": 0.00299544,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4557,7 +4114,6 @@
       "tax_is_soft": true,
       "free_cost_usd": 0.0039767,
       "best_cost_usd": 0.008477,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4570,7 +4126,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00085988,
       "best_cost_usd": 0.00086604,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4583,7 +4138,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.00303156,
       "best_cost_usd": 0.00191898,
-      "retries": 1,
       "n": 3
     },
     {
@@ -4596,7 +4150,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0008190000000000001,
       "best_cost_usd": 0.0005531399999999999,
-      "retries": 0.0,
       "n": 3
     },
     {
@@ -4609,7 +4162,6 @@
       "tax_is_soft": false,
       "free_cost_usd": 0.0015309,
       "best_cost_usd": 0.00161616,
-      "retries": 0.0,
       "n": 3
     }
   ]

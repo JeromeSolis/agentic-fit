@@ -63,7 +63,6 @@ def aggregate(rows: list[dict]) -> dict:
             "library": library,
             "success_rate": successes / n,
             "cost_usd": statistics.median(r["cost_usd"] for r in rs),
-            "retries": max(0.0, statistics.median(r.get("iterations", 1) for r in rs) - 1),
             "n": n,
         })
         libs_by_cat[category].add(library)
@@ -142,8 +141,6 @@ def build_free_entries(constrained_path: Path, free_path: Path, tasks_dir: Path)
         else:
             tax = constrained_cost[(model, category, pick)] / best.median_cost_usd if best.median_cost_usd else 0.0
             tax_is_soft = False
-        free_iters = [r.iterations for r in rs if getattr(r, "iterations", None) is not None]
-        retries = max(0.0, statistics.median(free_iters) - 1) if free_iters else 0.0
         entries.append({
             "model": model,
             "category": category,
@@ -154,7 +151,6 @@ def build_free_entries(constrained_path: Path, free_path: Path, tasks_dir: Path)
             "tax_is_soft": tax_is_soft,
             "free_cost_usd": free_cost,
             "best_cost_usd": best.median_cost_usd,
-            "retries": retries,
             "n": len(rs),
         })
     return entries
