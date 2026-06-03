@@ -97,7 +97,7 @@ table.drilldown { width:100%; border-collapse:collapse; }
 }
 .mode-toggle button.on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
 
-.metric-toggle button[disabled] { background:#cfcac0; color:#9a917c; cursor:not-allowed; }
+.metric-toggle button[disabled] { background:#b5ab8d; color:#fffdf7; border-color:#b5ab8d; cursor:not-allowed; }
 
 .cell.tax-1   { background:var(--c1); color:#173f60; font-weight:600; }
 .cell.tax-12  { background:var(--c2); color:#173f60; font-weight:600; }
